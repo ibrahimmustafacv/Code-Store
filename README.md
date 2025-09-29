@@ -35,11 +35,6 @@ npx serve .
 
 ## 🧪 Testing the Website
 
-### Test Activation Codes:
-- `ibrahim1`, `ibrahim2`, `ibrahim3` - Regular SharedChat accounts
-- `code123`, `test456` - Additional test codes
-- `memo` - Special code that opens SharedChat.cn directly
-
 ### Test Flow:
 1. Click "Activate Account" on the ChatGPT Pro card
 2. Enter any test code above
@@ -79,4 +74,3 @@ MIT License - Free to use and modify for your projects.
 
 ---
 
-**Ready to deploy! 🚀**
