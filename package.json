@@ -1,0 +1,37 @@
+{
+  "name": "code-store-website",
+  "version": "1.0.0",
+  "description": "Professional digital marketplace for premium accounts",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "npx serve .",
+    "dev": "npx live-server .",
+    "build": "echo 'No build process needed - static HTML file'",
+    "deploy": "echo 'Upload index.html to your hosting service'"
+  },
+  "keywords": [
+    "digital-marketplace",
+    "e-commerce",
+    "chatgpt",
+    "premium-accounts",
+    "responsive-design",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Code Store Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/code-store-website.git"
+  },
+  "homepage": "https://your-username.github.io/code-store-website",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "serve": "^14.2.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
