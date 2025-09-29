@@ -876,7 +876,7 @@
             isVerifying = false;
             
             // Reset form
-            document.getElementById('activationCode').value = 'You';
+            document.getElementById('activationCode').value = '';
             document.getElementById('errorMessage').style.display = 'none';
             document.getElementById('activationForm').style.display = 'block';
             document.getElementById('successResult').style.display = 'none';
@@ -918,7 +918,7 @@
                 
                 // Show success with direct access card
                 showSuccess({
-                    id: 'memo',
+                    id: 'You',
                     title: "SharedChat.cn Direct Access",
                     email: "xhitman",
                     password: randomPassword,
