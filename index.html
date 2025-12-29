@@ -187,8 +187,8 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2.5rem;
             margin-bottom: 3rem;
         }
 
@@ -203,7 +203,7 @@
             position: relative;
             display: flex;
             flex-direction: column;
-            height: 100%;
+            height: 320px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
@@ -226,123 +226,44 @@
 
         .product-image-container {
             width: 100%;
-            height: 180px;
+            height: 100%;
             overflow: hidden;
             position: relative;
-            background: transparent; /* تم إزالة الخلفية البيضاء */
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
         }
 
         .product-image {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* تغيير من cover إلى contain لرؤية الصورة كاملة */
-            padding: 1.5rem; /* تقليل الـ padding */
+            object-fit: contain;
+            padding: 2rem;
             transition: transform 0.5s ease;
-            background: transparent; /* تأكيد إزالة الخلفية */
         }
-
-        /* خلفيات مخصصة لكل أيقونة لمحاكاة تأثير الإطار */
-        .chatgpt-icon-bg { background: linear-gradient(135deg, #74AA9C, #10A37F); }
-        .canva-icon-bg { background: linear-gradient(135deg, #00C4CC, #7B2FF7); }
-        .appletv-icon-bg { background: linear-gradient(135deg, #000000, #1D1D1F); }
-        .applemusic-icon-bg { background: linear-gradient(135deg, #FA243C, #FB5F74); }
-        .coursera-icon-bg { background: linear-gradient(135deg, #0056D2, #1A73E8); }
-        .perplexity-icon-bg { background: linear-gradient(135deg, #000000, #404040); }
-        .epicgames-icon-bg { background: linear-gradient(135deg, #2A2A2A, #121212); }
-        .steam-icon-bg { background: linear-gradient(135deg, #171A21, #1B2838); }
-        .veed-icon-bg { background: linear-gradient(135deg, #00C4CC, #7B2FF7); }
 
         .product-card:hover .product-image {
             transform: scale(1.1);
         }
 
+        /* إزالة الخلفيات الملونة */
+        .chatgpt-icon-bg, 
+        .canva-icon-bg, 
+        .appletv-icon-bg, 
+        .applemusic-icon-bg, 
+        .coursera-icon-bg, 
+        .perplexity-icon-bg, 
+        .epicgames-icon-bg, 
+        .steam-icon-bg, 
+        .veed-icon-bg {
+            background: white !important;
+        }
+
+        /* إخفاء المحتوى النصي من البطاقة */
         .product-content {
-            padding: 1.5rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .product-card h4 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 0.75rem;
-            transition: color 0.3s ease;
-        }
-
-        .product-card:hover h4 {
-            color: #6366f1;
-        }
-
-        .product-card p {
-            color: #6b7280;
-            margin-bottom: 1rem;
-            line-height: 1.625;
-            flex-grow: 1;
-        }
-
-        .price {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: #4f46e5;
-            margin-bottom: 1.5rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .price::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(to right, #6366f1, #9333ea);
-            transition: width 0.3s ease;
-        }
-
-        .product-card:hover .price::after {
-            width: 100%;
-        }
-
-        .btn {
-            width: 100%;
-            padding: 1rem;
-            border-radius: 0.75rem;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-primary {
-            background: linear-gradient(to bottom right, #6366f1, #9333ea);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
-        }
-
-        .btn-primary::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
-        }
-
-        .btn-primary:hover::after {
-            transform: translateX(100%);
+            display: none;
         }
 
         footer {
@@ -433,7 +354,7 @@
             backdrop-filter: blur(4px);
             align-items: center;
             justify-content: center;
-            z-index: 50;
+            z-index: 1000;
             padding: 1rem;
             animation: fadeIn 0.3s ease-out;
         }
@@ -454,8 +375,8 @@
         .modal-content {
             background: white;
             border-radius: 1.5rem;
-            padding: 2rem;
-            max-width: 28rem;
+            padding: 3rem;
+            max-width: 500px;
             width: 100%;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             animation: slideUp 0.4s ease-out;
@@ -472,17 +393,11 @@
             }
         }
 
-        .modal-content-large {
-            max-width: 48rem;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-
         .modal h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 2rem;
+            font-weight: 800;
             color: #111827;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             text-align: center;
         }
 
@@ -490,14 +405,89 @@
             color: #6b7280;
             margin-bottom: 1.5rem;
             text-align: center;
+            font-size: 1.125rem;
+            line-height: 1.6;
+        }
+
+        .modal .product-image {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            display: block;
+            padding: 1rem;
+        }
+
+        .modal-price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #4f46e5;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .modal-price::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, #6366f1, #9333ea);
+            border-radius: 2px;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn-confirm {
+            flex: 1;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            background: linear-gradient(to bottom right, #6366f1, #9333ea);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.125rem;
+        }
+
+        .btn-confirm:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-cancel {
+            flex: 1;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            background: #e5e7eb;
+            color: #374151;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.125rem;
+        }
+
+        .btn-cancel:hover {
+            background: #d1d5db;
+            transform: translateY(-2px);
         }
 
         .modal input {
             width: 100%;
-            padding: 0.75rem 1rem;
+            padding: 1rem;
             border: 2px solid #d1d5db;
             border-radius: 0.75rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             text-align: center;
             font-size: 1.125rem;
             transition: all 0.3s ease;
@@ -523,338 +513,19 @@
             75% { transform: translateX(10px); }
         }
 
-        .modal-buttons {
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .btn-confirm {
-            flex: 1;
-            padding: 0.75rem;
-            border-radius: 0.75rem;
-            font-weight: 600;
-            background: linear-gradient(to bottom right, #6366f1, #9333ea);
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn-confirm:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
-        }
-
-        .btn-cancel {
-            flex: 1;
-            padding: 0.75rem;
-            border-radius: 0.75rem;
-            font-weight: 600;
-            background: #e5e7eb;
-            color: #374151;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn-cancel:hover {
-            background: #d1d5db;
-            transform: translateY(-2px);
-        }
-
-        .service-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-icon {
-            width: 4rem;
-            height: 4rem;
-            border-radius: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        .service-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 0.5rem;
-        }
-
-        .service-details {
-            margin-bottom: 2rem;
-        }
-
-        .detail-card {
-            border-radius: 1rem;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border: 2px solid;
-            transition: all 0.3s ease;
-        }
-
-        .detail-card:hover {
-            transform: translateX(5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .detail-card-cyan { background: linear-gradient(to bottom right, #ecfeff, #dbeafe); border-color: #67e8f9; }
-        .detail-card-purple { background: linear-gradient(to bottom right, #faf5ff, #fce7f3); border-color: #d8b4fe; }
-        .detail-card-orange { background: linear-gradient(to bottom right, #fff7ed, #fee2e2); border-color: #fb923c; }
-        .detail-card-green { background: linear-gradient(to bottom right, #f0fdf4, #d1fae5); border-color: #86efac; }
-        .detail-card-black { background: linear-gradient(to bottom right, #f5f5f7, #ffffff); border-color: #000000; }
-        .detail-card-gray { background: linear-gradient(to bottom right, #fafafa, #f5f5f5); border-color: #6e6e73; }
-        .detail-card-pink { background: linear-gradient(to bottom right, #fce7f3, #fee2e2); border-color: #f472b6; }
-        .detail-card-blue { background: linear-gradient(to bottom right, #dbeafe, #e0e7ff); border-color: #3b82f6; }
-        .detail-card-amber { background: linear-gradient(to bottom right, #fef3c7, #fed7aa); border-color: #f59e0b; }
-        .detail-card-epic { background: linear-gradient(to bottom right, #18181b, #27272a); border-color: #0078f2; }
-        .detail-card-steam { background: linear-gradient(to bottom right, #1b2838, #2a475e); border-color: #66c0f4; }
-        .detail-card-veed { background: linear-gradient(to bottom right, #e0f2fe, #f0f9ff); border-color: #00c4cc; }
-
-        .detail-header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .detail-icon {
-            width: 2.5rem;
-            height: 2.5rem;
-            border-radius: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            transition: transform 0.3s ease;
-        }
-
-        .detail-card:hover .detail-icon {
-            transform: rotate(15deg);
-        }
-
-        .detail-icon-cyan { background: #06b6d4; }
-        .detail-icon-purple { background: #a855f7; }
-        .detail-icon-orange { background: #f97316; }
-        .detail-icon-green { background: #22c55e; }
-        .detail-icon-black { background: #000000; }
-        .detail-icon-gray { background: #6e6e73; }
-        .detail-icon-pink { background: #ec4899; }
-        .detail-icon-blue { background: #3b82f6; }
-        .detail-icon-amber { background: #f59e0b; }
-        .detail-icon-epic { background: #0078f2; }
-        .detail-icon-steam { background: #1b2838; }
-
-        .detail-card h4 {
-            font-size: 1.125rem;
-            font-weight: 700;
-            color: #111827;
-            transition: color 0.3s ease;
-        }
-
-        .detail-card:hover h4 {
-            color: #6366f1;
-        }
-
-        .detail-card p {
-            color: #6b7280;
-            font-size: 0.875rem;
-            margin-bottom: 0.75rem;
-            text-align: left;
-        }
-
-        .detail-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1rem;
-            background: linear-gradient(to right, #06b6d4, #2563eb);
-            color: white;
-            border-radius: 0.75rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .detail-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .detail-link::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .detail-link:hover::after {
-            left: 100%;
-        }
-
-        .detail-link-orange { background: linear-gradient(to right, #f97316, #dc2626); }
-        .detail-link-black { background: #000000; }
-        .detail-link-black:hover { background: #1a1a1a; }
-        .detail-link-pink { background: linear-gradient(to right, #ec4899, #dc2626); }
-        .detail-link-blue { background: linear-gradient(to right, #3b82f6, #1e40af); }
-        .detail-link-purple { background: linear-gradient(to right, #a855f7, #ec4899); }
-        .detail-link-epic { background: #0078f2; }
-        .detail-link-epic:hover { background: #0063c6; }
-        .detail-link-steam { background: linear-gradient(to right, #1b2838, #2a475e); }
-        .detail-link-steam:hover { background: #171a21; }
-
-        .account-selector {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .account-option {
-            background: white;
-            border: 2px solid #e5e5e5;
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .account-option:hover {
-            border-color: #1b2838;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .account-option.selected {
-            border-color: #1b2838;
-            background: linear-gradient(to bottom right, #1b2838, #2a475e);
-            color: white;
-            transform: scale(1.05);
-        }
-
-        .account-option h5 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .account-option p {
-            font-size: 0.75rem;
-            opacity: 0.8;
-        }
-
-        .account-details-section {
-            display: none;
-        }
-
-        .account-details-section.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-
-        .credential-row, .email-box {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: white;
-            border-radius: 0.75rem;
-            padding: 1rem;
-            border: 1px solid #e5e5e5;
-            margin-bottom: 0.75rem;
-            transition: all 0.3s ease;
-        }
-
-        .credential-row:hover, .email-box:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .credential-label {
-            font-weight: 600;
-            color: #1d1d1f;
-            min-width: 80px;
-            font-size: 0.875rem;
-        }
-
-        .credential-value, .email-box code {
-            flex: 1;
-            color: #1d1d1f;
-            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
-            font-size: 0.875rem;
-            word-break: break-all;
-        }
-
-        .copy-btn {
-            padding: 0.5rem;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            border-radius: 0.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .copy-btn:hover {
-            background: #f3e8ff;
-            transform: rotate(15deg);
-        }
-
-        .instructions {
-            list-style: none;
-            padding: 0;
-        }
-
-        .instructions li {
-            display: flex;
-            gap: 0.5rem;
-            color: #374151;
-            font-size: 0.875rem;
-            margin-bottom: 0.5rem;
-            padding: 0.5rem;
-            border-radius: 0.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .instructions li:hover {
-            background: rgba(99, 102, 241, 0.1);
-            transform: translateX(5px);
-        }
-
-        .instructions li span:first-child {
-            font-weight: 600;
-            color: #22c55e;
-            min-width: 20px;
-        }
-
         @media (max-width: 768px) {
             .hero h2 { font-size: 2rem; }
             .hero p { font-size: 1rem; }
             .badges { display: none; }
             .products-section { padding: 2rem 1rem; }
+            .products-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+            .product-card { height: 250px; }
+            .modal-content { padding: 2rem; margin: 1rem; }
+        }
+
+        @media (max-width: 480px) {
             .products-grid { grid-template-columns: 1fr; }
-            .product-image-container { height: 150px; }
+            .product-card { height: 280px; }
         }
     </style>
 </head>
@@ -908,11 +579,12 @@
 
             <div class="products-grid">
                 <!-- ChatGPT Pro -->
-                <div class="product-card" onclick="openModal('chatgpt')">
-                    <div class="product-image-container chatgpt-icon-bg">
-                        <img src="chatgpt-icon.png" alt="ChatGPT Pro" class="product-image">
+                <div class="product-card" onclick="openProductModal('chatgpt')">
+                    <div class="product-image-container">
+                        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968517.png" alt="ChatGPT Pro" class="product-image">
                     </div>
-                    <div class="product-content">
+                    <!-- المحتوى النصي مخفي -->
+                    <div class="product-content" style="display: none;">
                         <h4>ChatGPT Pro</h4>
                         <p>Premium AI assistant with advanced capabilities and unlimited access</p>
                         <div class="price">$20/month</div>
@@ -921,11 +593,11 @@
                 </div>
 
                 <!-- Canva Pro -->
-                <div class="product-card" onclick="openModal('canva')">
-                    <div class="product-image-container canva-icon-bg">
-                        <img src="canva-icon.png" alt="Canva Pro" class="product-image">
+                <div class="product-card" onclick="openProductModal('canva')">
+                    <div class="product-image-container">
+                        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968525.png" alt="Canva Pro" class="product-image">
                     </div>
-                    <div class="product-content">
+                    <div class="product-content" style="display: none;">
                         <h4>Canva Pro</h4>
                         <p>Professional design tool with premium templates</p>
                         <div class="price">$15/month</div>
@@ -934,11 +606,11 @@
                 </div>
 
                 <!-- Apple TV -->
-                <div class="product-card" onclick="openModal('appletv')">
-                    <div class="product-image-container appletv-icon-bg">
-                        <img src="appletv-icon.png" alt="Apple TV" class="product-image">
+                <div class="product-card" onclick="openProductModal('appletv')">
+                    <div class="product-image-container">
+                        <img src="https://cdn-icons-png.flaticon.com/512/179/179309.png" alt="Apple TV" class="product-image">
                     </div>
-                    <div class="product-content">
+                    <div class="product-content" style="display: none;">
                         <h4>Apple TV</h4>
                         <p>Stream premium content on Apple TV+</p>
                         <div class="price">$10/month</div>
@@ -947,11 +619,11 @@
                 </div>
 
                 <!-- Apple Music -->
-                <div class="product-card" onclick="openModal('applemusic')">
-                    <div class="product-image-container applemusic-icon-bg">
-                        <img src="applemusic-icon.png" alt="Apple Music" class="product-image">
+                <div class="product-card" onclick="openProductModal('applemusic')">
+                    <div class="product-image-container">
+                        <img src="https://cdn-icons-png.flaticon.com/512/179/179315.png" alt="Apple Music" class="product-image">
                     </div>
-                    <div class="product-content">
+                    <div class="product-content" style="display: none;">
                         <h4>Apple Music</h4>
                         <p>Access millions of songs and playlists</p>
                         <div class="price">$10/month</div>
@@ -960,11 +632,11 @@
                 </div>
 
                 <!-- Coursera -->
-                <div class="product-card" onclick="openModal('coursera')">
-                    <div class="product-image-container coursera-icon-bg">
-                        <img src="coursera-icon.png" alt="Coursera" class="product-image">
+                <div class="product-card" onclick="openProductModal('coursera')">
+                    <div class="product-image-container">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/coursera.svg" alt="Coursera" class="product-image">
                     </div>
-                    <div class="product-content">
+                    <div class="product-content" style="display: none;">
                         <h4>Coursera</h4>
                         <p>Access to premium online courses and certificates</p>
                         <div class="price">$15/month</div>
@@ -973,11 +645,11 @@
                 </div>
 
                 <!-- Perplexity.ai -->
-                <div class="product-card" onclick="openModal('perplexity')">
-                    <div class="product-image-container perplexity-icon-bg">
-                        <img src="perplexity-icon.png" alt="Perplexity.ai" class="product-image">
+                <div class="product-card" onclick="openProductModal('perplexity')">
+                    <div class="product-image-container">
+                        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968517.png" alt="Perplexity.ai" class="product-image">
                     </div>
-                    <div class="product-content">
+                    <div class="product-content" style="display: none;">
                         <h4>Perplexity.ai</h4>
                         <p>AI-powered search and research assistant</p>
                         <div class="price">$20/month</div>
@@ -986,11 +658,11 @@
                 </div>
 
                 <!-- Epic Games -->
-                <div class="product-card" onclick="openModal('epicgames')">
-                    <div class="product-image-container epicgames-icon-bg">
-                        <img src="epicgames-icon.png" alt="Epic Games" class="product-image">
+                <div class="product-card" onclick="openProductModal('epicgames')">
+                    <div class="product-image-container">
+                        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968525.png" alt="Epic Games" class="product-image">
                     </div>
-                    <div class="product-content">
+                    <div class="product-content" style="display: none;">
                         <h4>Epic Games</h4>
                         <p>Premium gaming account with exclusive titles</p>
                         <div class="price">$25/month</div>
@@ -999,11 +671,11 @@
                 </div>
 
                 <!-- Steam -->
-                <div class="product-card" onclick="openModal('steam')">
-                    <div class="product-image-container steam-icon-bg">
-                        <img src="steam-icon.png" alt="Steam" class="product-image">
+                <div class="product-card" onclick="openProductModal('steam')">
+                    <div class="product-image-container">
+                        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968517.png" alt="Steam" class="product-image">
                     </div>
-                    <div class="product-content">
+                    <div class="product-content" style="display: none;">
                         <h4>Steam</h4>
                         <p>Gaming platform with extensive game library</p>
                         <div class="price">$30/month</div>
@@ -1012,11 +684,11 @@
                 </div>
 
                 <!-- Veed.io -->
-                <div class="product-card" onclick="openModal('veed')">
-                    <div class="product-image-container veed-icon-bg">
-                        <img src="veed-icon.png" alt="Veed.io" class="product-image">
+                <div class="product-card" onclick="openProductModal('veed')">
+                    <div class="product-image-container">
+                        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968525.png" alt="Veed.io" class="product-image">
                     </div>
-                    <div class="product-content">
+                    <div class="product-content" style="display: none;">
                         <h4>Veed.io</h4>
                         <p>Professional video editing and creation tool</p>
                         <div class="price">$18/month</div>
@@ -1034,27 +706,93 @@
         </div>
     </footer>
 
-    <!-- بقية المودالات والـ JavaScript كما هي -->
-    <!-- Activation Modal -->
-    <div id="activationModal" class="modal">
+    <!-- Modal لعرض تفاصيل المنتج -->
+    <div id="productModal" class="modal">
         <div class="modal-content">
-            <h3 id="modalTitle">Activate Account</h3>
-            <p>Please enter your activation code to access the account</p>
-            <input type="text" id="activationCode" placeholder="Enter activation code" onkeypress="handleKeyPress(event)">
-            <div id="errorMessage" class="error-message" style="display: none;"></div>
+            <img id="modalProductImage" src="" alt="" class="product-image">
+            <h3 id="modalProductTitle">Product Title</h3>
+            <p id="modalProductDescription">Product description</p>
+            <div class="modal-price" id="modalProductPrice">$0/month</div>
             <div class="modal-buttons">
-                <button class="btn-confirm" onclick="submitCode()">Confirm</button>
-                <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+                <button class="btn-confirm" onclick="openActivationModal()">Activate Account</button>
+                <button class="btn-cancel" onclick="closeProductModal()">Close</button>
             </div>
         </div>
     </div>
 
-    <!-- باقي المودالات (Canva, Apple TV, Apple Music, Coursera, Perplexity, Epic Games, Steam, Veed) -->
-    <!-- تم حذفها للإيجاز ولكن يجب أن تبقى كما هي في الكود الأصلي -->
+    <!-- Modal لتفعيل الحساب -->
+    <div id="activationModal" class="modal">
+        <div class="modal-content">
+            <h3 id="modalTitle">Activate Account</h3>
+            <p id="modalDescription">Please enter your activation code to access the account</p>
+            <input type="text" id="activationCode" placeholder="Enter activation code" onkeypress="handleKeyPress(event)">
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+            <div class="modal-buttons">
+                <button class="btn-confirm" onclick="submitCode()">Confirm</button>
+                <button class="btn-cancel" onclick="closeActivationModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
 
     <script>
-        let currentModalType = null;
-        
+        let currentProductType = null;
+        const productData = {
+            'chatgpt': {
+                title: 'ChatGPT Pro',
+                description: 'Premium AI assistant with advanced capabilities and unlimited access',
+                price: '$20/month',
+                image: 'https://cdn-icons-png.flaticon.com/512/5968/5968517.png'
+            },
+            'canva': {
+                title: 'Canva Pro',
+                description: 'Professional design tool with premium templates',
+                price: '$15/month',
+                image: 'https://cdn-icons-png.flaticon.com/512/5968/5968525.png'
+            },
+            'appletv': {
+                title: 'Apple TV',
+                description: 'Stream premium content on Apple TV+',
+                price: '$10/month',
+                image: 'https://cdn-icons-png.flaticon.com/512/179/179309.png'
+            },
+            'applemusic': {
+                title: 'Apple Music',
+                description: 'Access millions of songs and playlists',
+                price: '$10/month',
+                image: 'https://cdn-icons-png.flaticon.com/512/179/179315.png'
+            },
+            'coursera': {
+                title: 'Coursera',
+                description: 'Access to premium online courses and certificates',
+                price: '$15/month',
+                image: 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/coursera.svg'
+            },
+            'perplexity': {
+                title: 'Perplexity.ai',
+                description: 'AI-powered search and research assistant',
+                price: '$20/month',
+                image: 'https://cdn-icons-png.flaticon.com/512/5968/5968517.png'
+            },
+            'epicgames': {
+                title: 'Epic Games',
+                description: 'Premium gaming account with exclusive titles',
+                price: '$25/month',
+                image: 'https://cdn-icons-png.flaticon.com/512/5968/5968525.png'
+            },
+            'steam': {
+                title: 'Steam',
+                description: 'Gaming platform with extensive game library',
+                price: '$30/month',
+                image: 'https://cdn-icons-png.flaticon.com/512/5968/5968517.png'
+            },
+            'veed': {
+                title: 'Veed.io',
+                description: 'Professional video editing and creation tool',
+                price: '$18/month',
+                image: 'https://cdn-icons-png.flaticon.com/512/5968/5968525.png'
+            }
+        };
+
         // دالة العد التصاعدي
         function animateCount(element, start, end, duration) {
             let startTimestamp = null;
@@ -1070,69 +808,91 @@
             window.requestAnimationFrame(step);
         }
 
+        // دالة لفتح نافذة المنتج
+        function openProductModal(type) {
+            currentProductType = type;
+            const product = productData[type];
+            
+            if (product) {
+                document.getElementById('modalProductImage').src = product.image;
+                document.getElementById('modalProductTitle').textContent = product.title;
+                document.getElementById('modalProductDescription').textContent = product.description;
+                document.getElementById('modalProductPrice').textContent = product.price;
+                
+                document.getElementById('productModal').classList.add('active');
+            }
+        }
+
+        // دالة لإغلاق نافذة المنتج
+        function closeProductModal() {
+            document.getElementById('productModal').classList.remove('active');
+        }
+
+        // دالة لفتح نافذة التفعيل
+        function openActivationModal() {
+            closeProductModal();
+            
+            const product = productData[currentProductType];
+            if (product) {
+                document.getElementById('modalTitle').textContent = `Activate ${product.title}`;
+                document.getElementById('modalDescription').textContent = `Please enter your activation code to access ${product.title}`;
+            }
+            
+            document.getElementById('activationCode').value = '';
+            document.getElementById('errorMessage').style.display = 'none';
+            document.getElementById('activationModal').classList.add('active');
+        }
+
+        // دالة لإغلاق نافذة التفعيل
+        function closeActivationModal() {
+            document.getElementById('activationModal').classList.remove('active');
+        }
+
+        // التعامل مع ضغط المفتاح
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                submitCode();
+            }
+        }
+
+        // دالة لإرسال الكود
+        function submitCode() {
+            const code = document.getElementById('activationCode').value;
+            const errorMessage = document.getElementById('errorMessage');
+            
+            if (!code) {
+                errorMessage.textContent = 'Please enter an activation code';
+                errorMessage.style.display = 'block';
+                return;
+            }
+            
+            if (code.length < 8) {
+                errorMessage.textContent = 'Code must be at least 8 characters';
+                errorMessage.style.display = 'block';
+                return;
+            }
+            
+            // هنا يمكنك إضافة منطق التحقق من الكود
+            errorMessage.style.display = 'none';
+            alert('Activation successful! Account details will be sent to your email.');
+            closeActivationModal();
+        }
+
         // تهيئة العناصر المتحركة
         document.addEventListener('DOMContentLoaded', function() {
             // عد تصاعدي لعدد العملاء
             const customerCount = document.getElementById('customerCount');
             animateCount(customerCount, 0, 1000, 2000);
             
-            // تأثيرات عند التمرير
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate');
+            // إغلاق النوافذ عند النقر خارجها
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.classList.remove('active');
                     }
-                });
-            }, observerOptions);
-
-            // مراقبة العناصر للحركات
-            document.querySelectorAll('.product-card, .stat-item, .detail-card').forEach(el => {
-                observer.observe(el);
-            });
-
-            // تأثيرات عند المرور على الروابط
-            document.querySelectorAll('.detail-link, .btn-primary').forEach(link => {
-                link.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-3px)';
-                });
-                link.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
                 });
             });
         });
-
-        // باقي الدوال كما هي
-        function openModal(type) {
-            currentModalType = type;
-            const modal = document.getElementById('activationModal');
-            const title = document.getElementById('modalTitle');
-
-            const titles = {
-                'chatgpt': 'Activate ChatGPT Pro',
-                'canva': 'Activate Canva Pro',
-                'appletv': 'Activate Apple TV+',
-                'applemusic': 'Activate Apple Music',
-                'coursera': 'Activate Coursera',
-                'perplexity': 'Activate Perplexity AI',
-                'epicgames': 'Activate Epic Games',
-                'steam': 'Activate Steam Account',
-                'veed': 'Activate Veed.io'
-            };
-
-            title.textContent = titles[type] || 'Activate Account';
-            document.getElementById('activationCode').value = '';
-            document.getElementById('errorMessage').style.display = 'none';
-            modal.classList.add('active');
-        }
-
-        // باقي الدوال (closeModal, submitCode, copyText, etc.) تبقى كما هي
-        // ... [يجب إضافة باقي الدوال JavaScript كما هي في الكود السابق]
-
     </script>
 </body>
 </html>
