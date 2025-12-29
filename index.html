@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Store - Premium Digital Accounts</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,181 +12,188 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(to bottom right, #6366f1, #9333ea);
             min-height: 100vh;
-            overflow-x: hidden;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 1.25rem;
         }
 
-        /* Header Styles */
-        .header {
+        header {
             background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(24px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             position: sticky;
             top: 0;
-            z-index: 100;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            z-index: 50;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
         .header-content {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 20px 0;
+            padding: 1.25rem 0;
         }
 
-        .logo {
+        .logo-section {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 1rem;
         }
 
         .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 12px;
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(to bottom right, #6366f1, #9333ea);
+            border-radius: 0.75rem;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 1.5rem;
             color: white;
-            font-size: 24px;
-            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
         .logo-text h1 {
-            font-size: 28px;
+            font-size: 1.5rem;
             font-weight: 800;
-            color: #1a1a1a;
-            margin-bottom: 2px;
+            color: #111827;
         }
 
         .logo-text p {
-            font-size: 14px;
-            color: #666;
+            font-size: 0.875rem;
             font-weight: 500;
+            color: #6b7280;
         }
 
-        .header-badges {
+        .badges {
             display: flex;
-            gap: 20px;
+            gap: 1.25rem;
             align-items: center;
         }
 
         .badge {
             display: flex;
             align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            background: rgba(102, 126, 234, 0.1);
-            border-radius: 20px;
-            font-size: 14px;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #e0e7ff;
+            border-radius: 9999px;
+            font-size: 0.875rem;
             font-weight: 500;
-            color: #667eea;
+            color: #4f46e5;
         }
 
-        /* Hero Section */
         .hero {
             text-align: center;
-            padding: 80px 0;
+            padding: 5rem 0;
             color: white;
         }
 
         .hero h2 {
-            font-size: clamp(36px, 5vw, 64px);
+            font-size: 3rem;
             font-weight: 800;
-            margin-bottom: 20px;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            margin-bottom: 1.25rem;
+            text-shadow: 0 10px 8px rgba(0, 0, 0, 0.04);
         }
 
         .hero p {
-            font-size: clamp(18px, 2.5vw, 24px);
-            margin-bottom: 40px;
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
             opacity: 0.9;
-            max-width: 600px;
+            max-width: 42rem;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.6;
+            line-height: 1.625;
         }
 
-        .hero-stats {
+        .stats {
             display: flex;
             justify-content: center;
-            gap: 40px;
-            margin-top: 40px;
+            gap: 2.5rem;
             flex-wrap: wrap;
+            margin-top: 2.5rem;
         }
 
-        .stat {
+        .stat-item {
             text-align: center;
         }
 
-        .stat-number {
-            font-size: 32px;
-            font-weight: 800;
+        .stat-item .number {
             display: block;
+            font-size: 2.25rem;
+            font-weight: 800;
         }
 
-        .stat-label {
-            font-size: 14px;
+        .stat-item .label {
+            font-size: 0.875rem;
             opacity: 0.8;
-            margin-top: 5px;
+            margin-top: 0.25rem;
         }
 
-        /* Products Section */
         .products-section {
             background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            margin: 40px 20px;
-            border-radius: 24px;
-            padding: 60px 40px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(24px);
+            margin: 2.5rem 1.25rem;
+            border-radius: 1.5rem;
+            padding: 4rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
 
-        .section-title {
+        .section-header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 3rem;
         }
 
-        .section-title h3 {
-            font-size: 36px;
+        .section-header h3 {
+            font-size: 2.25rem;
             font-weight: 800;
-            color: #1a1a1a;
-            margin-bottom: 15px;
+            color: #111827;
+            margin-bottom: 1rem;
         }
 
-        .section-title p {
-            font-size: 18px;
-            color: #666;
-            max-width: 500px;
+        .section-header p {
+            font-size: 1.125rem;
+            color: #6b7280;
+            max-width: 32rem;
             margin: 0 auto;
         }
 
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
 
         .product-card {
             background: white;
-            border-radius: 20px;
-            padding: 30px;
+            border-radius: 1rem;
+            padding: 2rem;
             text-align: center;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            transition: all 0.15s;
             cursor: pointer;
             border: 2px solid transparent;
             position: relative;
             overflow: hidden;
+        }
+
+        .product-card.coming-soon {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .product-card:not(.coming-soon):hover {
+            transform: translateY(-0.5rem);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border-color: #6366f1;
         }
 
         .product-card::before {
@@ -197,473 +203,444 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
+            background: linear-gradient(to right, #6366f1, #9333ea);
         }
 
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-            border-color: #667eea;
-        }
-
-        .product-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, #10b981, #059669);
-            border-radius: 20px;
+        .product-image {
+            width: 100%;
+            height: 12rem;
+            margin-bottom: 1.25rem;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 36px;
-            color: white;
-            box-shadow: 0 8px 30px rgba(16, 185, 129, 0.3);
+            background: white;
+            position: relative;
+        }
+
+        .product-image img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
         }
 
         .product-card h4 {
-            font-size: 24px;
+            font-size: 1.5rem;
             font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 10px;
+            color: #111827;
+            margin-bottom: 0.75rem;
         }
 
         .product-card p {
-            color: #666;
-            margin-bottom: 15px;
-            line-height: 1.5;
+            color: #6b7280;
+            margin-bottom: 1rem;
+            line-height: 1.625;
         }
 
-        .product-price {
-            font-size: 20px;
+        .price {
+            font-size: 1.25rem;
             font-weight: 700;
-            color: #667eea;
-            margin-bottom: 25px;
+            color: #4f46e5;
+            margin-bottom: 1.5rem;
         }
 
-        .product-btn {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .product-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-        }
-
-        .coming-soon {
-            opacity: 0.6;
-            pointer-events: none;
-        }
-
-        .coming-soon .product-btn {
-            background: #e5e7eb;
+        .price.coming-soon-price {
             color: #9ca3af;
         }
 
-        /* Modal Styles */
+        .btn {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.15s;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(to bottom right, #6366f1, #9333ea);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-0.25rem);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-disabled {
+            background: #e5e7eb;
+            color: #6b7280;
+            cursor: not-allowed;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(24px);
+            margin: 1.25rem;
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            color: #6b7280;
+            margin-bottom: 0.5rem;
+        }
+
         .modal {
             display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            animation: fadeIn 0.3s ease;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            align-items: center;
+            justify-content: center;
+            z-index: 50;
+            padding: 1rem;
         }
 
         .modal.active {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
         }
 
         .modal-content {
             background: white;
-            border-radius: 24px;
-            padding: 40px;
-            max-width: 500px;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            max-width: 28rem;
             width: 100%;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .modal-content-large {
+            max-width: 48rem;
             max-height: 90vh;
             overflow-y: auto;
-            position: relative;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
 
-        .modal-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 30px;
-        }
-
-        .modal-title {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .modal-title h3 {
-            font-size: 24px;
+        .modal h3 {
+            font-size: 1.5rem;
             font-weight: 700;
-            color: #1a1a1a;
+            color: #111827;
+            margin-bottom: 1rem;
+            text-align: center;
         }
 
-        .close-btn {
-            width: 40px;
-            height: 40px;
-            border: none;
-            background: #f3f4f6;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            color: #666;
-            transition: all 0.3s ease;
+        .modal p {
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+            text-align: center;
         }
 
-        .close-btn:hover {
-            background: #e5e7eb;
-            transform: rotate(90deg);
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            color: #374151;
-            margin-bottom: 8px;
-        }
-
-        .form-input {
+        .modal input {
             width: 100%;
-            padding: 15px;
-            border: 2px solid #e5e7eb;
-            border-radius: 12px;
-            font-size: 16px;
-            transition: all 0.3s ease;
+            padding: 0.75rem 1rem;
+            border: 2px solid #d1d5db;
+            border-radius: 0.75rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-size: 1.125rem;
         }
 
-        .form-input:focus {
+        .modal input:focus {
             outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        .verify-btn {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .verify-btn:hover:not(:disabled) {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-        }
-
-        .verify-btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        .loading {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .spinner {
-            width: 20px;
-            height: 20px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-top: 2px solid white;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
+            border-color: #6366f1;
         }
 
         .error-message {
-            display: flex;
-            align-items: center;
-            gap: 10px;
             color: #ef4444;
-            font-size: 14px;
-            margin-top: 10px;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            text-align: center;
         }
 
-        .success-message {
+        .modal-buttons {
             display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #10b981;
-            font-size: 16px;
+            gap: 0.75rem;
+        }
+
+        .btn-confirm {
+            flex: 1;
+            padding: 0.75rem;
+            border-radius: 0.75rem;
             font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .account-card {
-            background: linear-gradient(135deg, #10b981, #059669);
-            border-radius: 16px;
-            padding: 25px;
+            background: linear-gradient(to bottom right, #6366f1, #9333ea);
             color: white;
-            margin-bottom: 20px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.15s;
         }
 
-        .account-card.direct-access {
-            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+        .btn-confirm:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
-        .account-header {
+        .btn-cancel {
+            flex: 1;
+            padding: 0.75rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            background: #e5e7eb;
+            color: #374151;
+            border: none;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .btn-cancel:hover {
+            background: #d1d5db;
+        }
+
+        .service-header {
             display: flex;
-            justify-content: between;
             align-items: center;
-            margin-bottom: 20px;
+            justify-content: center;
+            margin-bottom: 1.5rem;
         }
 
-        .account-title {
-            font-size: 18px;
+        .service-icon {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            font-size: 2rem;
+            overflow: hidden;
+        }
+
+        .service-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .service-details {
+            margin-bottom: 2rem;
+        }
+
+        .detail-card {
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 2px solid;
+        }
+
+        .detail-card-cyan { background: linear-gradient(to bottom right, #ecfeff, #dbeafe); border-color: #67e8f9; }
+        .detail-card-purple { background: linear-gradient(to bottom right, #faf5ff, #fce7f3); border-color: #d8b4fe; }
+        .detail-card-orange { background: linear-gradient(to bottom right, #fff7ed, #fee2e2); border-color: #fb923c; }
+        .detail-card-green { background: linear-gradient(to bottom right, #f0fdf4, #d1fae5); border-color: #86efac; }
+        .detail-card-black { background: linear-gradient(to bottom right, #f5f5f7, #ffffff); border-color: #000000; }
+        .detail-card-gray { background: linear-gradient(to bottom right, #fafafa, #f5f5f5); border-color: #6e6e73; }
+        .detail-card-pink { background: linear-gradient(to bottom right, #fce7f3, #fee2e2); border-color: #f472b6; }
+        .detail-card-blue { background: linear-gradient(to bottom right, #dbeafe, #e0e7ff); border-color: #3b82f6; }
+        .detail-card-amber { background: linear-gradient(to bottom right, #fef3c7, #fed7aa); border-color: #f59e0b; }
+        .detail-card-epic { background: linear-gradient(to bottom right, #18181b, #27272a); border-color: #0078f2; }
+        .detail-card-steam { background: linear-gradient(to bottom right, #1b2838, #2a475e); border-color: #66c0f4; }
+        .detail-card-veed { background: linear-gradient(to bottom right, #e0f2fe, #f0f9ff); border-color: #00c4cc; }
+
+        .detail-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .detail-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .detail-icon-cyan { background: #06b6d4; }
+        .detail-icon-purple { background: #a855f7; }
+        .detail-icon-orange { background: #f97316; }
+        .detail-icon-green { background: #22c55e; }
+        .detail-icon-black { background: #000000; }
+        .detail-icon-gray { background: #6e6e73; }
+        .detail-icon-pink { background: #ec4899; }
+        .detail-icon-blue { background: #3b82f6; }
+        .detail-icon-amber { background: #f59e0b; }
+        .detail-icon-epic { background: #0078f2; }
+        .detail-icon-steam { background: #1b2838; }
+
+        .detail-card h4 {
+            font-size: 1.125rem;
             font-weight: 700;
+            color: #111827;
         }
 
-        .validity-badge {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 500;
+        .detail-card p {
+            color: #6b7280;
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+            text-align: left;
         }
 
-        .credential-item {
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 15px;
+        .detail-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+            background: linear-gradient(to right, #06b6d4, #2563eb);
+            color: white;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.15s;
+        }
+
+        .detail-link:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .detail-link-orange { background: linear-gradient(to right, #f97316, #dc2626); }
+        .detail-link-black { background: #000000; }
+        .detail-link-black:hover { background: #1a1a1a; }
+        .detail-link-pink { background: linear-gradient(to right, #ec4899, #dc2626); }
+        .detail-link-blue { background: linear-gradient(to right, #3b82f6, #1e40af); }
+        .detail-link-purple { background: linear-gradient(to right, #a855f7, #ec4899); }
+        .detail-link-epic { background: #0078f2; }
+        .detail-link-epic:hover { background: #0063c6; }
+        .detail-link-steam { background: linear-gradient(to right, #1b2838, #2a475e); }
+        .detail-link-steam:hover { background: #171a21; }
+
+        .account-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .account-option {
+            background: white;
+            border: 2px solid #e5e5e5;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .account-option:hover {
+            border-color: #1b2838;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .account-option.selected {
+            border-color: #1b2838;
+            background: linear-gradient(to bottom right, #1b2838, #2a475e);
+            color: white;
+        }
+
+        .account-option h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .account-option p {
+            font-size: 0.75rem;
+            opacity: 0.8;
+        }
+
+        .account-details-section {
+            display: none;
+        }
+
+        .account-details-section.active {
+            display: block;
+        }
+
+        .credential-row, .email-box {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            border: 1px solid #e5e5e5;
+            margin-bottom: 0.75rem;
         }
 
         .credential-label {
-            font-size: 12px;
-            opacity: 0.8;
-            margin-bottom: 5px;
-        }
-
-        .credential-value {
-            font-family: 'Courier New', monospace;
-            font-size: 14px;
             font-weight: 600;
-            user-select: all;
+            color: #1d1d1f;
+            min-width: 80px;
+            font-size: 0.875rem;
         }
 
-        .features-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 15px 0;
+        .credential-value, .email-box code {
+            flex: 1;
+            color: #1d1d1f;
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+            font-size: 0.875rem;
+            word-break: break-all;
         }
 
-        .feature-tag {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 500;
+        .copy-btn {
+            padding: 0.5rem;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            border-radius: 0.5rem;
+            transition: all 0.15s;
+        }
+
+        .copy-btn:hover {
+            background: #f3e8ff;
         }
 
         .instructions {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            padding: 15px;
-            margin-top: 15px;
+            list-style: none;
+            padding: 0;
         }
 
-        .instructions-title {
-            font-size: 12px;
+        .instructions li {
+            display: flex;
+            gap: 0.5rem;
+            color: #374151;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .instructions li span:first-child {
             font-weight: 600;
-            margin-bottom: 8px;
+            color: #22c55e;
+            min-width: 20px;
         }
 
-        .instructions-text {
-            font-size: 12px;
-            line-height: 1.5;
-            white-space: pre-line;
-        }
-
-        .powered-by {
-            text-align: center;
-            margin-top: 15px;
-            font-size: 12px;
-            opacity: 0.8;
-        }
-
-        .powered-by a {
-            color: inherit;
-            text-decoration: underline;
-        }
-
-        .test-codes {
-            background: #f8fafc;
-            border-radius: 8px;
-            padding: 15px;
-            margin-top: 15px;
-        }
-
-        .test-codes p {
-            font-size: 12px;
-            color: #64748b;
-            margin-bottom: 5px;
-        }
-
-        /* Footer */
-        .footer {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            margin: 40px 20px 20px;
-            border-radius: 24px;
-            padding: 40px;
-            text-align: center;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .footer p {
-            color: #666;
-            margin-bottom: 10px;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .slide-up {
-            animation: slideUp 0.6s ease forwards;
-        }
-
-        /* Responsive Design */
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
-
-            .header-badges {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero {
-                padding: 60px 0;
-            }
-
-            .hero-stats {
-                gap: 20px;
-            }
-
-            .products-section {
-                margin: 20px 10px;
-                padding: 40px 20px;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .modal-content {
-                padding: 30px 20px;
-                margin: 10px;
-            }
-
-            .footer {
-                margin: 20px 10px 10px;
-                padding: 30px 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo-icon {
-                width: 40px;
-                height: 40px;
-                font-size: 20px;
-            }
-
-            .logo-text h1 {
-                font-size: 24px;
-            }
-
-            .badge {
-                padding: 6px 12px;
-                font-size: 12px;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .product-card {
-                padding: 20px;
-            }
-
-            .product-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 28px;
-            }
+            .hero h2 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .badges { display: none; }
+            .products-section { padding: 2rem 1rem; }
+            .products-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
+    <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">
+                <div class="logo-section">
                     <div class="logo-icon">🛒</div>
                     <div class="logo-text">
                         <h1>Code Store</h1>
                         <p>Premium Digital Accounts</p>
                     </div>
                 </div>
-                <div class="header-badges">
+                <div class="badges">
                     <div class="badge">🔒 Secure</div>
                     <div class="badge">⚡ Instant</div>
                     <div class="badge">✅ Verified</div>
@@ -672,76 +649,129 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <h2>Premium Digital Accounts</h2>
             <p>Get instant access to premium AI tools and services. Secure, verified, and ready to use.</p>
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number">1000+</span>
-                    <span class="stat-label">Happy Customers</span>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="number">1000+</span>
+                    <span class="label">Happy Customers</span>
                 </div>
-                <div class="stat">
-                    <span class="stat-number">24/7</span>
-                    <span class="stat-label">Support</span>
+                <div class="stat-item">
+                    <span class="number">24/7</span>
+                    <span class="label">Support</span>
                 </div>
-                <div class="stat">
-                    <span class="stat-number">99.9%</span>
-                    <span class="stat-label">Uptime</span>
+                <div class="stat-item">
+                    <span class="number">99.9%</span>
+                    <span class="label">Uptime</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Products Section -->
     <section class="products-section">
         <div class="container">
-            <div class="section-title">
+            <div class="section-header">
                 <h3>Available Products</h3>
                 <p>Choose from our selection of premium digital accounts</p>
             </div>
-            
+
             <div class="products-grid">
-                <!-- ChatGPT Pro -->
-                <div class="product-card" onclick="openModal('chatgpt-pro')">
-                    <div class="product-icon">🤖</div>
+                <div class="product-card" onclick="openModal('chatgpt')">
+                    <div class="product-image">
+                        <img src="chatgpt-icon.png" alt="ChatGPT Pro">
+                    </div>
                     <h4>ChatGPT Pro</h4>
                     <p>Premium AI assistant with advanced capabilities and unlimited access</p>
-                    <div class="product-price">$20/month</div>
-                    <button class="product-btn">Activate Account</button>
+                    <div class="price">$20/month</div>
+                    <button class="btn btn-primary">Activate Account</button>
                 </div>
 
-                <!-- Coming Soon Products -->
-                <div class="product-card coming-soon">
-                    <div class="product-icon" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">🔧</div>
-                    <h4>GitHub Copilot</h4>
-                    <p>AI-powered coding assistant for developers</p>
-                    <div class="product-price">Coming Soon</div>
-                    <button class="product-btn">Coming Soon</button>
+                <div class="product-card" onclick="openModal('canva')">
+                    <div class="product-image">
+                        <img src="canva-icon.png" alt="Canva Pro">
+                    </div>
+                    <h4>Canva Pro</h4>
+                    <p>Professional design tool with premium templates</p>
+                    <div class="price">$15/month</div>
+                    <button class="btn btn-primary">Activate Account</button>
                 </div>
 
-                <div class="product-card coming-soon">
-                    <div class="product-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">📝</div>
-                    <h4>Notion Pro</h4>
-                    <p>Premium workspace for notes and collaboration</p>
-                    <div class="product-price">Coming Soon</div>
-                    <button class="product-btn">Coming Soon</button>
+                <div class="product-card" onclick="openModal('appletv')">
+                    <div class="product-image">
+                        <img src="appletv-icon.png" alt="Apple TV">
+                    </div>
+                    <h4>Apple TV</h4>
+                    <p>Stream premium content on Apple TV+</p>
+                    <div class="price">$10/month</div>
+                    <button class="btn btn-primary">Activate Account</button>
                 </div>
 
-                <div class="product-card coming-soon">
-                    <div class="product-icon" style="background: linear-gradient(135deg, #ec4899, #be185d);">🎨</div>
-                    <h4>Figma Pro</h4>
-                    <p>Professional design and prototyping tool</p>
-                    <div class="product-price">Coming Soon</div>
-                    <button class="product-btn">Coming Soon</button>
+                <div class="product-card" onclick="openModal('applemusic')">
+                    <div class="product-image">
+                        <img src="applemusic-icon.png" alt="Apple Music">
+                    </div>
+                    <h4>Apple Music</h4>
+                    <p>Access millions of songs and playlists</p>
+                    <div class="price">$10/month</div>
+                    <button class="btn btn-primary">Activate Account</button>
+                </div>
+
+                <div class="product-card" onclick="openModal('coursera')">
+                    <div class="product-image">
+                        <img src="coursera-icon.png" alt="Coursera">
+                    </div>
+                    <h4>Coursera</h4>
+                    <p>Access to premium online courses and certificates</p>
+                    <div class="price">$15/month</div>
+                    <button class="btn btn-primary">Activate Account</button>
+                </div>
+
+                <div class="product-card" onclick="openModal('perplexity')">
+                    <div class="product-image">
+                        <img src="perplexity-icon.png" alt="Perplexity.ai">
+                    </div>
+                    <h4>Perplexity.ai</h4>
+                    <p>AI-powered search and research assistant</p>
+                    <div class="price">$20/month</div>
+                    <button class="btn btn-primary">Activate Account</button>
+                </div>
+
+                <div class="product-card" onclick="openModal('epicgames')">
+                    <div class="product-image">
+                        <img src="epicgames-icon.png" alt="Epic Games">
+                    </div>
+                    <h4>Epic Games</h4>
+                    <p>Premium gaming account with exclusive titles</p>
+                    <div class="price">$25/month</div>
+                    <button class="btn btn-primary">Activate Account</button>
+                </div>
+
+                <div class="product-card" onclick="openModal('steam')">
+                    <div class="product-image">
+                        <img src="steam-icon.png" alt="Steam">
+                    </div>
+                    <h4>Steam</h4>
+                    <p>Gaming platform with extensive game library</p>
+                    <div class="price">$30/month</div>
+                    <button class="btn btn-primary">Activate Account</button>
+                </div>
+
+                <div class="product-card" onclick="openModal('veed')">
+                    <div class="product-image">
+                        <img src="veed-icon.png" alt="Veed.io">
+                    </div>
+                    <h4>Veed.io</h4>
+                    <p>Professional video editing and creation tool</p>
+                    <div class="price">$18/month</div>
+                    <button class="btn btn-primary">Activate Account</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container">
             <p>&copy; 2025 Code Store. All rights reserved.</p>
             <p>Secure digital account marketplace</p>
@@ -751,274 +781,813 @@
     <!-- Activation Modal -->
     <div id="activationModal" class="modal">
         <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-title">
-                    <div class="product-icon" style="width: 40px; height: 40px; font-size: 20px;">🤖</div>
-                    <h3 id="modalTitle">ChatGPT Pro</h3>
-                </div>
-                <button class="close-btn" onclick="closeModal()">&times;</button>
-            </div>
-
-            <div id="activationForm">
-                <div class="form-group">
-                    <label for="activationCode">Enter Activation Code</label>
-                    <input type="text" id="activationCode" class="form-input" placeholder="Enter your code here..." onkeypress="handleKeyPress(event)">
-                </div>
-
-                <div id="errorMessage" class="error-message" style="display: none;">
-                    <span>❌</span>
-                    <span>Invalid activation code. Please try again.</span>
-                </div>
-
-                <div class="test-codes">
-                    <p><strong>For testing, try:</strong> 1, 2, 3, 123, 456, or </p>
-                    
-                </div>
-
-                <button id="verifyBtn" class="verify-btn" onclick="verifyCode()">
-                    Verify Code
-                </button>
-            </div>
-
-            <div id="successResult" style="display: none;">
-                <div class="success-message">
-                    <span>✅</span>
-                    <span id="successText">Free SharedChat Card Unlocked!</span>
-                </div>
-
-                <div id="accountCard" class="account-card">
-                    <!-- Account details will be populated here -->
-                </div>
-
-                <button id="continueBtn" class="verify-btn" onclick="closeModal()">
-                    Enjoy Your Free Account!
-                </button>
+            <h3 id="modalTitle">Activate Account</h3>
+            <p>Please enter your activation code to access the account</p>
+            <input type="text" id="activationCode" placeholder="Enter activation code" onkeypress="handleKeyPress(event)">
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+            <div class="modal-buttons">
+                <button class="btn-confirm" onclick="submitCode()">Confirm</button>
+                <button class="btn-cancel" onclick="closeModal()">Cancel</button>
             </div>
         </div>
     </div>
 
+    <!-- Canva Modal -->
+    <div id="canvaModal" class="modal">
+        <div class="modal-content modal-content-large">
+            <div class="service-header">
+                <div class="service-icon">
+                    <img src="canva-icon.png" alt="Canva Pro">
+                </div>
+            </div>
+            <h3 style="font-size: 1.875rem;">Welcome to Canva Pro</h3>
+            <p>Your account details are ready. Access your premium features now!</p>
+
+            <div class="service-details">
+                <div class="detail-card detail-card-cyan">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-cyan">🔗</div>
+                        <h4>Canva Website</h4>
+                    </div>
+                    <p>Visit Canva to start designing</p>
+                    <a href="https://www.canva.com/" target="_blank" class="detail-link">Open Canva →</a>
+                </div>
+
+                <div class="detail-card detail-card-purple">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-purple">📧</div>
+                        <h4>Email Account</h4>
+                    </div>
+                    <p>Your Canva account email address</p>
+                    <div class="email-box">
+                        <code id="canvaEmail">kkvvha664@examtestseries.online</code>
+                        <button class="copy-btn" onclick="copyCanvaEmail()" title="Copy email">
+                            <span id="canvaEmailIcon">📋</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="detail-card detail-card-orange">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-orange">🔐</div>
+                        <h4>Verification Code</h4>
+                    </div>
+                    <p>Access your email verification codes here</p>
+                    <a href="https://www.oxaam.com/kaanvahcode11.php" target="_blank" class="detail-link detail-link-orange">Get Verification Code →</a>
+                </div>
+
+                <div class="detail-card detail-card-green">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-green">✅</div>
+                        <h4>Quick Start Guide</h4>
+                    </div>
+                    <ol class="instructions">
+                        <li><span>1.</span><span>Click "Open Canva" to visit the website</span></li>
+                        <li><span>2.</span><span>Use the email address provided above to log in</span></li>
+                        <li><span>3.</span><span>If you need a verification code, click "Get Verification Code"</span></li>
+                        <li><span>4.</span><span>Start creating amazing designs with Canva Pro!</span></li>
+                    </ol>
+                </div>
+            </div>
+
+            <button class="btn-cancel" style="width: 100%; margin-top: 2rem;" onclick="closeCanvaModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- Apple TV Modal -->
+    <div id="appletvModal" class="modal">
+        <div class="modal-content modal-content-large">
+            <div class="service-header">
+                <div class="service-icon">
+                    <img src="appletv-icon.png" alt="Apple TV+">
+                </div>
+            </div>
+            <h3 style="font-size: 1.875rem;">Welcome to Apple TV+</h3>
+            <p>Your account details are ready. Start streaming premium content now!</p>
+
+            <div class="service-details">
+                <div class="detail-card detail-card-black">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-black">🔗</div>
+                        <h4>Apple TV+ Website</h4>
+                    </div>
+                    <p>Visit Apple TV+ to start streaming</p>
+                    <a href="https://tv.apple.com/" target="_blank" class="detail-link detail-link-black">Open Apple TV+ →</a>
+                </div>
+
+                <div class="detail-card detail-card-gray">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-gray">🔑</div>
+                        <h4>Account Credentials</h4>
+                    </div>
+                    <p>Your Apple TV+ login information</p>
+                    <div class="credential-row">
+                        <span class="credential-label">Email:</span>
+                        <code class="credential-value" id="appletvEmail">aptvliv919@oxaam.com</code>
+                        <button class="copy-btn" onclick="copyAppleTVEmail()" title="Copy email">
+                            <span id="appletvEmailIcon">📋</span>
+                        </button>
+                    </div>
+                    <div class="credential-row">
+                        <span class="credential-label">Password:</span>
+                        <code class="credential-value" id="appletvPassword">Oxaam915671#</code>
+                        <button class="copy-btn" onclick="copyAppleTVPassword()" title="Copy password">
+                            <span id="appletvPasswordIcon">📋</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="detail-card detail-card-green">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-green">✅</div>
+                        <h4>Quick Start Guide</h4>
+                    </div>
+                    <ol class="instructions">
+                        <li><span>1.</span><span>Click "Open Apple TV+" to visit the website</span></li>
+                        <li><span>2.</span><span>Use the email address provided above to log in</span></li>
+                        <li><span>3.</span><span>Enter the password when prompted</span></li>
+                        <li><span>4.</span><span>Start enjoying Apple TV+ premium content!</span></li>
+                    </ol>
+                </div>
+            </div>
+
+            <button class="btn-cancel" style="width: 100%; margin-top: 2rem;" onclick="closeAppleTVModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- Apple Music Modal -->
+    <div id="applemusicModal" class="modal">
+        <div class="modal-content modal-content-large">
+            <div class="service-header">
+                <div class="service-icon">
+                    <img src="applemusic-icon.png" alt="Apple Music">
+                </div>
+            </div>
+            <h3 style="font-size: 1.875rem;">Welcome to Apple Music</h3>
+            <p>Your account details are ready. Start listening to millions of songs now!</p>
+
+            <div class="service-details">
+                <div class="detail-card detail-card-pink">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-pink">🔗</div>
+                        <h4>Apple Music Website</h4>
+                    </div>
+                    <p>Visit Apple Music to start listening</p>
+                    <a href="https://music.apple.com/" target="_blank" class="detail-link detail-link-pink">Open Apple Music →</a>
+                </div>
+
+                <div class="detail-card detail-card-purple">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-purple">🔑</div>
+                        <h4>Account Credentials</h4>
+                    </div>
+                    <p>Your Apple Music login information</p>
+                    <div class="credential-row">
+                        <span class="credential-label">Email:</span>
+                        <code class="credential-value" id="applemusicEmail">aptmusc9@oxaam.com</code>
+                        <button class="copy-btn" onclick="copyAppleMusicEmail()" title="Copy email">
+                            <span id="applemusicEmailIcon">📋</span>
+                        </button>
+                    </div>
+                    <div class="credential-row">
+                        <span class="credential-label">Password:</span>
+                        <code class="credential-value" id="applemusicPassword">Oxaam9945#</code>
+                        <button class="copy-btn" onclick="copyAppleMusicPassword()" title="Copy password">
+                            <span id="applemusicPasswordIcon">📋</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="detail-card detail-card-green">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-green">✅</div>
+                        <h4>Quick Start Guide</h4>
+                    </div>
+                    <ol class="instructions">
+                        <li><span>1.</span><span>Click "Open Apple Music" to visit the website</span></li>
+                        <li><span>2.</span><span>Use the email address provided above to log in</span></li>
+                        <li><span>3.</span><span>Enter the password when prompted</span></li>
+                        <li><span>4.</span><span>Start enjoying millions of songs on Apple Music!</span></li>
+                    </ol>
+                </div>
+            </div>
+
+            <button class="btn-cancel" style="width: 100%; margin-top: 2rem;" onclick="closeAppleMusicModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- Coursera Modal -->
+    <div id="courseraModal" class="modal">
+        <div class="modal-content modal-content-large">
+            <div class="service-header">
+                <div class="service-icon">
+                    <img src="coursera-icon.png" alt="Coursera">
+                </div>
+            </div>
+            <h3 style="font-size: 1.875rem;">Welcome to Coursera</h3>
+            <p>Your account is ready. Follow the steps below to access premium courses!</p>
+
+            <div class="service-details">
+                <div class="detail-card detail-card-blue">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-blue">🔗</div>
+                        <h4>Coursera Website</h4>
+                    </div>
+                    <p>Visit Coursera to start learning</p>
+                    <a href="https://www.coursera.org/" target="_blank" class="detail-link detail-link-blue">Open Coursera →</a>
+                </div>
+
+                <div class="detail-card detail-card-purple">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-purple">🍪</div>
+                        <h4>Cookie Editor Extension</h4>
+                    </div>
+                    <p>Install the Cookie Editor extension for Chrome</p>
+                    <a href="https://chromewebstore.google.com/detail/cookie-editor/hlkenndednhfkekhgcdicdfddnkalmdm" target="_blank" class="detail-link detail-link-purple">Install Cookie Editor →</a>
+                </div>
+
+                <div class="detail-card detail-card-green">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-green">✅</div>
+                        <h4>Setup Instructions</h4>
+                    </div>
+                    <ol class="instructions">
+                        <li><span>1.</span><span>Install the Cookie Editor extension from Chrome Web Store</span></li>
+                        <li><span>2.</span><span>Open Coursera website and click on the Cookie Editor icon in your browser</span></li>
+                        <li><span>3.</span><span>Click on "Import" and paste the JSON cookies provided by support</span></li>
+                        <li><span>4.</span><span>Click "Save", then refresh Coursera - you will be logged in</span></li>
+                        <li><span>5.</span><span>To get the cookie file, contact our support team</span></li>
+                    </ol>
+                </div>
+
+                <div class="detail-card detail-card-amber">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-amber">💬</div>
+                        <h4>Need Help?</h4>
+                    </div>
+                    <p>Contact our support team to receive your cookie JSON file and additional assistance.</p>
+                    <div style="background: white; border-radius: 0.5rem; padding: 0.75rem; border: 1px solid #fbbf24; margin-top: 0.75rem;">
+                        <p style="font-size: 0.875rem; color: #6b7280; font-style: italic; margin: 0;">
+                            "Our support team is available 24/7 to help you set up your Coursera account"
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn-cancel" style="width: 100%; margin-top: 2rem;" onclick="closeCourseraModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- Perplexity Modal -->
+    <div id="perplexityModal" class="modal">
+        <div class="modal-content modal-content-large">
+            <div class="service-header">
+                <div class="service-icon">
+                    <img src="perplexity-icon.png" alt="Perplexity AI">
+                </div>
+            </div>
+            <h3 style="font-size: 1.875rem;">Welcome to Perplexity AI</h3>
+            <p>Your premium AI-powered search assistant is ready to use!</p>
+
+            <div class="service-details">
+                <div class="detail-card detail-card-cyan">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-cyan">🔗</div>
+                        <h4>Perplexity Website</h4>
+                    </div>
+                    <p>Visit Perplexity AI to start your intelligent search experience</p>
+                    <a href="https://www.perplexity.ai/" target="_blank" class="detail-link">Open Perplexity AI →</a>
+                </div>
+
+                <div class="detail-card detail-card-purple">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-purple">📧</div>
+                        <h4>Email Account</h4>
+                    </div>
+                    <p>Your Perplexity AI account email address</p>
+                    <div class="email-box">
+                        <code id="perplexityEmail">purplixyee641@oxaam.com</code>
+                        <button class="copy-btn" onclick="copyPerplexityEmail()" title="Copy email">
+                            <span id="perplexityEmailIcon">📋</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="detail-card detail-card-orange">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-orange">🔐</div>
+                        <h4>Verification Code</h4>
+                    </div>
+                    <p>Access your email verification codes here</p>
+                    <a href="https://www.oxaam.com/prxlycode5.php" target="_blank" class="detail-link detail-link-orange">Get Verification Code →</a>
+                </div>
+
+                <div class="detail-card detail-card-green">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-green">✅</div>
+                        <h4>Quick Start Guide</h4>
+                    </div>
+                    <ol class="instructions">
+                        <li><span>1.</span><span>Click "Open Perplexity AI" to visit the website</span></li>
+                        <li><span>2.</span><span>Use the email address provided above to sign in</span></li>
+                        <li><span>3.</span><span>If you need a verification code, click "Get Verification Code"</span></li>
+                        <li><span>4.</span><span>Start exploring with your AI-powered search assistant!</span></li>
+                    </ol>
+                </div>
+            </div>
+
+            <button class="btn-cancel" style="width: 100%; margin-top: 2rem;" onclick="closePerplexityModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- Epic Games Modal -->
+    <div id="epicgamesModal" class="modal">
+        <div class="modal-content modal-content-large">
+            <div class="service-header">
+                <div class="service-icon">
+                    <img src="epicgames-icon.png" alt="Epic Games">
+                </div>
+            </div>
+            <h3 style="font-size: 1.875rem;">Welcome to Epic Games</h3>
+            <p>Your premium gaming account is ready. Access exclusive titles and features now!</p>
+
+            <div class="service-details">
+                <div class="detail-card detail-card-epic">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-epic">🔗</div>
+                        <h4 style="color: white;">Epic Games Store</h4>
+                    </div>
+                    <p style="color: #a1a1aa;">Visit Epic Games Store to access your games and exclusive content</p>
+                    <a href="https://store.epicgames.com/" target="_blank" class="detail-link detail-link-epic">Open Epic Games Store →</a>
+                </div>
+
+                <div class="detail-card detail-card-gray">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-gray">🔑</div>
+                        <h4>Account Credentials</h4>
+                    </div>
+                    <p>Your Epic Games account login information</p>
+                    <div class="credential-row">
+                        <span class="credential-label">Email:</span>
+                        <code class="credential-value" id="epicgamesEmail">aapikgames@oxaam.com</code>
+                        <button class="copy-btn" onclick="copyEpicGamesEmail()" title="Copy email">
+                            <span id="epicgamesEmailIcon">📋</span>
+                        </button>
+                    </div>
+                    <div class="credential-row">
+                        <span class="credential-label">Password:</span>
+                        <code class="credential-value" id="epicgamesPassword">Oxaam7714912#</code>
+                        <button class="copy-btn" onclick="copyEpicGamesPassword()" title="Copy password">
+                            <span id="epicgamesPasswordIcon">📋</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="detail-card detail-card-orange">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-orange">🔐</div>
+                        <h4>Verification Code</h4>
+                    </div>
+                    <p>Access your email verification codes here</p>
+                    <a href="https://www.oxaam.com/aapikcode.php" target="_blank" class="detail-link detail-link-orange">Get Verification Code →</a>
+                </div>
+
+                <div class="detail-card detail-card-green">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-green">✅</div>
+                        <h4>Quick Start Guide</h4>
+                    </div>
+                    <ol class="instructions">
+                        <li><span>1.</span><span>Click "Open Epic Games Store" to visit the website</span></li>
+                        <li><span>2.</span><span>Use the email address provided above to log in</span></li>
+                        <li><span>3.</span><span>Enter the password when prompted</span></li>
+                        <li><span>4.</span><span>If you need a verification code, click "Get Verification Code"</span></li>
+                        <li><span>5.</span><span>Start exploring your Epic Games library and exclusive content!</span></li>
+                    </ol>
+                </div>
+            </div>
+
+            <button class="btn-cancel" style="width: 100%; margin-top: 2rem;" onclick="closeEpicGamesModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- Steam Modal -->
+    <div id="steamModal" class="modal">
+        <div class="modal-content modal-content-large">
+            <div class="service-header">
+                <div class="service-icon">
+                    <img src="steam-icon.png" alt="Steam">
+                </div>
+            </div>
+            <h3 style="font-size: 1.875rem;">Welcome to Steam</h3>
+            <p id="steamWelcomeMessage">Your premium gaming account is ready. Start gaming now!</p>
+
+            <!-- Account 1 Details -->
+            <div id="steamDetails1" class="service-details account-details-section">
+                <div class="detail-card detail-card-steam">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-steam">🔗</div>
+                        <h4 style="color: white;">Steam Store</h4>
+                    </div>
+                    <p style="color: #c7d5e0;">Visit Steam to access your games and community features</p>
+                    <a href="https://store.steampowered.com/" target="_blank" class="detail-link detail-link-steam">Open Steam Store →</a>
+                </div>
+
+                <div class="detail-card detail-card-gray">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-gray">🔑</div>
+                        <h4>Account Credentials - Account 1</h4>
+                    </div>
+                    <p>Your Steam account login information</p>
+                    <div class="credential-row">
+                        <span class="credential-label">Username:</span>
+                        <code class="credential-value" id="steamUsername1">woblerone1</code>
+                        <button class="copy-btn" onclick="copySteamUsername(1)" title="Copy username">
+                            <span id="steamUsernameIcon1">📋</span>
+                        </button>
+                    </div>
+                    <div class="credential-row">
+                        <span class="credential-label">Password:</span>
+                        <code class="credential-value" id="steamPassword1">piHXtR,@*G2fse<</code>
+                        <button class="copy-btn" onclick="copySteamPassword(1)" title="Copy password">
+                            <span id="steamPasswordIcon1">📋</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="detail-card detail-card-green">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-green">✅</div>
+                        <h4>Quick Start Guide</h4>
+                    </div>
+                    <ol class="instructions">
+                        <li><span>1.</span><span>Click "Open Steam Store" to visit the website</span></li>
+                        <li><span>2.</span><span>Click "login" in the top right corner</span></li>
+                        <li><span>3.</span><span>Enter the username and password provided above</span></li>
+                        <li><span>4.</span><span>Start exploring your Steam library and game collection!</span></li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Account 2 Details -->
+            <div id="steamDetails2" class="service-details account-details-section">
+                <div class="detail-card detail-card-steam">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-steam">🔗</div>
+                        <h4 style="color: white;">Steam Store</h4>
+                    </div>
+                    <p style="color: #c7d5e0;">Visit Steam to access your games and community features</p>
+                    <a href="https://store.steampowered.com/" target="_blank" class="detail-link detail-link-steam">Open Steam Store →</a>
+                </div>
+
+                <div class="detail-card detail-card-gray">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-gray">🔑</div>
+                        <h4>Account Credentials - Account 2</h4>
+                    </div>
+                    <p>Your Steam account login information</p>
+                    <div class="credential-row">
+                        <span class="credential-label">Username:</span>
+                        <code class="credential-value" id="steamUsername2">99892722</code>
+                        <button class="copy-btn" onclick="copySteamUsername(2)" title="Copy username">
+                            <span id="steamUsernameIcon2">📋</span>
+                        </button>
+                    </div>
+                    <div class="credential-row">
+                        <span class="credential-label">Password:</span>
+                        <code class="credential-value" id="steamPassword2">04216324</code>
+                        <button class="copy-btn" onclick="copySteamPassword(2)" title="Copy password">
+                            <span id="steamPasswordIcon2">📋</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="detail-card detail-card-green">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-green">✅</div>
+                        <h4>Quick Start Guide</h4>
+                    </div>
+                    <ol class="instructions">
+                        <li><span>1.</span><span>Click "Open Steam Store" to visit the website</span></li>
+                        <li><span>2.</span><span>Click "login" in the top right corner</span></li>
+                        <li><span>3.</span><span>Enter the username and password provided above</span></li>
+                        <li><span>4.</span><span>Start exploring your Steam library and game collection!</span></li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Account 3 Details -->
+            <div id="steamDetails3" class="service-details account-details-section">
+                <div class="detail-card detail-card-steam">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-steam">🔗</div>
+                        <h4 style="color: white;">Steam Store</h4>
+                    </div>
+                    <p style="color: #c7d5e0;">Visit Steam to access your games and community features</p>
+                    <a href="https://store.steampowered.com/" target="_blank" class="detail-link detail-link-steam">Open Steam Store →</a>
+                </div>
+
+                <div class="detail-card detail-card-gray">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-gray">🔑</div>
+                        <h4>Account Credentials - Account 3</h4>
+                    </div>
+                    <p>Your Steam account login information</p>
+                    <div class="credential-row">
+                        <span class="credential-label">Username:</span>
+                        <code class="credential-value" id="steamUsername3">7854YIxK</code>
+                        <button class="copy-btn" onclick="copySteamUsername(3)" title="Copy username">
+                            <span id="steamUsernameIcon3">📋</span>
+                        </button>
+                    </div>
+                    <div class="credential-row">
+                        <span class="credential-label">Password:</span>
+                        <code class="credential-value" id="steamPassword3">6399dnEVfh13</code>
+                        <button class="copy-btn" onclick="copySteamPassword(3)" title="Copy password">
+                            <span id="steamPasswordIcon3">📋</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="detail-card detail-card-green">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-green">✅</div>
+                        <h4>Quick Start Guide</h4>
+                    </div>
+                    <ol class="instructions">
+                        <li><span>1.</span><span>Click "Open Steam Store" to visit the website</span></li>
+                        <li><span>2.</span><span>Click "login" in the top right corner</span></li>
+                        <li><span>3.</span><span>Enter the username and password provided above</span></li>
+                        <li><span>4.</span><span>Start exploring your Steam library and game collection!</span></li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Account 4 Details -->
+            <div id="steamDetails4" class="service-details account-details-section">
+                <div class="detail-card detail-card-steam">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-steam">🔗</div>
+                        <h4 style="color: white;">Steam Store</h4>
+                    </div>
+                    <p style="color: #c7d5e0;">Visit Steam to access your games and community features</p>
+                    <a href="https://store.steampowered.com/" target="_blank" class="detail-link detail-link-steam">Open Steam Store →</a>
+                </div>
+
+                <div class="detail-card detail-card-gray">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-gray">🔑</div>
+                        <h4>Account Credentials - Account 4</h4>
+                    </div>
+                    <p>Your Steam account login information</p>
+                    <div class="credential-row">
+                        <span class="credential-label">Username:</span>
+                        <code class="credential-value" id="steamUsername4">tjnq50897</code>
+                        <button class="copy-btn" onclick="copySteamUsername(4)" title="Copy username">
+                            <span id="steamUsernameIcon4">📋</span>
+                        </button>
+                    </div>
+                    <div class="credential-row">
+                        <span class="credential-label">Password:</span>
+                        <code class="credential-value" id="steamPassword4">Xlystore1</code>
+                        <button class="copy-btn" onclick="copySteamPassword(4)" title="Copy password">
+                            <span id="steamPasswordIcon4">📋</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="detail-card detail-card-green">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-green">✅</div>
+                        <h4>Quick Start Guide</h4>
+                    </div>
+                    <ol class="instructions">
+                        <li><span>1.</span><span>Click "Open Steam Store" to visit the website</span></li>
+                        <li><span>2.</span><span>Click "login" in the top right corner</span></li>
+                        <li><span>3.</span><span>Enter the username and password provided above</span></li>
+                        <li><span>4.</span><span>Start exploring your Steam library and game collection!</span></li>
+                    </ol>
+                </div>
+            </div>
+
+            <button class="btn-cancel" style="width: 100%; margin-top: 2rem;" onclick="closeSteamModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- Veed.io Modal -->
+    <div id="veedModal" class="modal">
+        <div class="modal-content modal-content-large">
+            <div class="service-header">
+                <div class="service-icon">
+                    <img src="veed-icon.png" alt="Veed.io">
+                </div>
+            </div>
+            <h3 style="font-size: 1.875rem;">Welcome to Veed.io</h3>
+            <p>Your professional video editing account is ready. Start creating amazing videos now!</p>
+
+            <div class="service-details">
+                <div class="detail-card detail-card-cyan">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-cyan">🔗</div>
+                        <h4>Veed.io Website</h4>
+                    </div>
+                    <p>Visit Veed.io to start editing your videos professionally</p>
+                    <a href="https://www.veed.io/" target="_blank" class="detail-link">Open Veed.io →</a>
+                </div>
+
+                <div class="detail-card detail-card-purple">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-purple">📧</div>
+                        <h4>Email Account</h4>
+                    </div>
+                    <p>Your Veed.io account email address</p>
+                    <div class="email-box">
+                        <code id="veedEmail">videoai16@oxaam.com</code>
+                        <button class="copy-btn" onclick="copyVeedEmail()" title="Copy email">
+                            <span id="veedEmailIcon">📋</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="detail-card detail-card-orange">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-orange">🔐</div>
+                        <h4>Verification Code</h4>
+                    </div>
+                    <p>Access your email verification codes here</p>
+                    <a href="https://www.oxaam.com/vdoaicode7.php" target="_blank" class="detail-link detail-link-orange">Get Verification Code →</a>
+                </div>
+
+                <div class="detail-card detail-card-green">
+                    <div class="detail-header">
+                        <div class="detail-icon detail-icon-green">✅</div>
+                        <h4>Quick Start Guide</h4>
+                    </div>
+                    <ol class="instructions">
+                        <li><span>1.</span><span>Click "Open Veed.io" to visit the website</span></li>
+                        <li><span>2.</span><span>Use the email address provided above to log in</span></li>
+                        <li><span>3.</span><span>If you need a verification code, click "Get Verification Code"</span></li>
+                        <li><span>4.</span><span>Start creating professional videos with Veed.io!</span></li>
+                    </ol>
+                </div>
+            </div>
+
+            <button class="btn-cancel" style="width: 100%; margin-top: 2rem;" onclick="closeVeedModal()">Close</button>
+        </div>
+    </div>
+
     <script>
-        // Sample SharedChat cards data
-        const sharedChatCards = [
-            {
-                id: 1,
-                title: "ChatGPT Pro Account",
-                email: "user1@sharedchat.cn",
-                password: "SharedChat123!",
-                loginUrl: "https://chat.openai.com",
-                features: ["GPT-4 Access", "Unlimited Messages", "Priority Support", "Plugin Access"],
-                validUntil: "2025-02-15",
-                instructions: "1. Visit chat.openai.com\n2. Login with provided credentials\n3. Change password after first login\n4. Enjoy premium features!"
-            },
-            {
-                id: 2,
-                title: "ChatGPT Pro Account",
-                email: "user2@sharedchat.cn", 
-                password: "SharedChat456!",
-                loginUrl: "https://chat.openai.com",
-                features: ["GPT-4 Access", "Unlimited Messages", "Priority Support", "Plugin Access"],
-                validUntil: "2025-02-20",
-                instructions: "1. Visit chat.openai.com\n2. Login with provided credentials\n3. Change password after first login\n4. Enjoy premium features!"
-            },
-            {
-                id: 3,
-                title: "ChatGPT Pro Account",
-                email: "user3@sharedchat.cn",
-                password: "SharedChat789!",
-                loginUrl: "https://chat.openai.com", 
-                features: ["GPT-4 Access", "Unlimited Messages", "Priority Support", "Plugin Access"],
-                validUntil: "2025-02-25",
-                instructions: "1. Visit chat.openai.com\n2. Login with provided credentials\n3. Change password after first login\n4. Enjoy premium features!"
-            },
-            {
-                id: 4,
-                title: "ChatGPT Pro Account",
-                email: "user4@sharedchat.cn",
-                password: "SharedChat321!",
-                loginUrl: "https://chat.openai.com",
-                features: ["GPT-4 Access", "Unlimited Messages", "Priority Support", "Plugin Access"],
-                validUntil: "2025-03-01",
-                instructions: "1. Visit chat.openai.com\n2. Login with provided credentials\n3. Change password after first login\n4. Enjoy premium features!"
-            },
-            {
-                id: 5,
-                title: "ChatGPT Pro Account",
-                email: "user5@sharedchat.cn",
-                password: "SharedChat654!",
-                loginUrl: "https://chat.openai.com",
-                features: ["GPT-4 Access", "Unlimited Messages", "Priority Support", "Plugin Access"],
-                validUntil: "2025-03-05",
-                instructions: "1. Visit chat.openai.com\n2. Login with provided credentials\n3. Change password after first login\n4. Enjoy premium features!"
-            }
-        ];
+        let currentModalType = null;
 
-        // Valid activation codes
-        const validCodes = ['ibrahim1', 'ibrahim2', 'ibrahim3', 'code123', 'test456', 'mustafa'];
+        function openModal(type) {
+            currentModalType = type;
+            const modal = document.getElementById('activationModal');
+            const title = document.getElementById('modalTitle');
 
-        let currentProduct = null;
-        let isVerifying = false;
+            const titles = {
+                'chatgpt': 'Activate ChatGPT Pro',
+                'canva': 'Activate Canva Pro',
+                'appletv': 'Activate Apple TV+',
+                'applemusic': 'Activate Apple Music',
+                'coursera': 'Activate Coursera',
+                'perplexity': 'Activate Perplexity AI',
+                'epicgames': 'Activate Epic Games',
+                'steam': 'Activate Steam Account',
+                'veed': 'Activate Veed.io'
+            };
 
-        function openModal(productId) {
-            currentProduct = productId;
-            document.getElementById('activationModal').classList.add('active');
-            document.getElementById('activationCode').focus();
-            
-            // Reset modal state
-            document.getElementById('activationForm').style.display = 'block';
-            document.getElementById('successResult').style.display = 'none';
-            document.getElementById('errorMessage').style.display = 'none';
+            title.textContent = titles[type] || 'Activate Account';
             document.getElementById('activationCode').value = '';
+            document.getElementById('errorMessage').style.display = 'none';
+            modal.classList.add('active');
         }
 
         function closeModal() {
             document.getElementById('activationModal').classList.remove('active');
-            currentProduct = null;
-            isVerifying = false;
-            
-            // Reset form
-            document.getElementById('activationCode').value = '';
-            document.getElementById('errorMessage').style.display = 'none';
-            document.getElementById('activationForm').style.display = 'block';
-            document.getElementById('successResult').style.display = 'none';
+            currentModalType = null;
+        }
+
+        function closeCanvaModal() {
+            document.getElementById('canvaModal').classList.remove('active');
+        }
+
+        function closeAppleTVModal() {
+            document.getElementById('appletvModal').classList.remove('active');
+        }
+
+        function closeAppleMusicModal() {
+            document.getElementById('applemusicModal').classList.remove('active');
+        }
+
+        function closeCourseraModal() {
+            document.getElementById('courseraModal').classList.remove('active');
+        }
+
+        function closePerplexityModal() {
+            document.getElementById('perplexityModal').classList.remove('active');
+        }
+
+        function closeEpicGamesModal() {
+            document.getElementById('epicgamesModal').classList.remove('active');
+        }
+
+        function closeVeedModal() {
+            document.getElementById('veedModal').classList.remove('active');
+        }
+
+        function closeSteamModal() {
+            document.getElementById('steamModal').classList.remove('active');
+            document.querySelectorAll('.account-details-section').forEach(sec => sec.classList.remove('active'));
+        }
+
+        function showSteamAccount(accountNumber) {
+            document.querySelectorAll('.account-details-section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById('steamDetails' + accountNumber).classList.add('active');
+        }
+
+        function copySteamUsername(accountNumber) {
+            const username = document.getElementById('steamUsername' + accountNumber).textContent;
+            copyText(username, 'steamUsernameIcon' + accountNumber);
+        }
+
+        function copySteamPassword(accountNumber) {
+            const password = document.getElementById('steamPassword' + accountNumber).textContent;
+            copyText(password, 'steamPasswordIcon' + accountNumber);
+        }
+
+        function submitCode() {
+            const code = document.getElementById('activationCode').value.trim();
+            const errorDiv = document.getElementById('errorMessage');
+
+            const codeMap = {
+                'chatgpt': { code: 'chatgptxhitman1', action: () => window.open('https://sharedchat.cn/', '_blank') },
+                'canva': { code: 'canvaxhitman2', action: () => document.getElementById('canvaModal').classList.add('active') },
+                'appletv': { code: 'appletvxhitman3', action: () => document.getElementById('appletvModal').classList.add('active') },
+                'applemusic': { code: 'applemusicxhitman4', action: () => document.getElementById('applemusicModal').classList.add('active') },
+                'coursera': { code: 'Courseraxhitman6', action: () => document.getElementById('courseraModal').classList.add('active') },
+                'perplexity': { code: 'Perplexityaihitman6', action: () => document.getElementById('perplexityModal').classList.add('active') },
+                'epicgames': { code: 'epicgamesxhitman7', action: () => document.getElementById('epicgamesModal').classList.add('active') },
+                'veed': { code: 'Veedioxhitman9', action: () => document.getElementById('veedModal').classList.add('active') },
+                'steam': {
+                    codes: {
+                        'steam48': 1,
+                        'steam82': 2,
+                        'steam52': 3,
+                        'steam22': 4
+                    },
+                    action: (accountNum) => {
+                        if (accountNum) {
+                            showSteamAccount(accountNum);
+                            document.getElementById('steamModal').classList.add('active');
+                        }
+                    }
+                }
+            };
+
+            if (currentModalType === 'steam' && codeMap.steam.codes[code]) {
+                closeModal();
+                codeMap.steam.action(codeMap.steam.codes[code]);
+                return;
+            }
+
+            if (currentModalType && codeMap[currentModalType] && code === codeMap[currentModalType].code) {
+                closeModal();
+                codeMap[currentModalType].action();
+            } else {
+                errorDiv.textContent = 'Invalid activation code. Please try again.';
+                errorDiv.style.display = 'block';
+            }
         }
 
         function handleKeyPress(event) {
             if (event.key === 'Enter') {
-                verifyCode();
+                submitCode();
             }
         }
 
-        async function verifyCode() {
-            const code = document.getElementById('activationCode').value.trim();
-            if (!code || isVerifying) return;
-
-            isVerifying = true;
-            const verifyBtn = document.getElementById('verifyBtn');
-            const errorMessage = document.getElementById('errorMessage');
-            
-            // Show loading state
-            verifyBtn.innerHTML = `
-                <div class="loading">
-                    <div class="spinner"></div>
-                    <span>Verifying...</span>
-                </div>
-            `;
-            verifyBtn.disabled = true;
-            errorMessage.style.display = 'none';
-
-            // Simulate API delay
-            await new Promise(resolve => setTimeout(resolve, 1500));
-
-            if (code.toLowerCase() === 'you') {
-                // Generate random password
-                const randomPassword = 'Pass' + Math.floor(Math.random() * 10000) + '!';
-                
-                // Open SharedChat.cn in new tab
-                window.open('https://sharedchat.cn/', '_blank');
-                
-                // Show success with direct access card
-                showSuccess({
-                    id: 'you',
-                    title: "SharedChat.cn Direct Access",
-                    email: "xhitman",
-                    password: randomPassword,
-                    loginUrl: "https://sharedchat.cn/",
-                    features: ["Direct Access", "Premium Features", "Instant Login"],
-                    validUntil: "Unlimited",
-                    instructions: `1. The website has been opened in a new tab\n2. Use username: xhitman\n3. Use password: ${randomPassword}\n4. Enjoy premium access!`,
-                    isDirectAccess: true
-                }, 'SharedChat.cn Opened!');
-                
-            } else if (validCodes.includes(code.toLowerCase())) {
-                // Get random SharedChat card
-                const randomCard = sharedChatCards[Math.floor(Math.random() * sharedChatCards.length)];
-                showSuccess(randomCard, 'Free SharedChat Card Unlocked!');
-                
-            } else {
-                // Show error
-                errorMessage.style.display = 'flex';
-                verifyBtn.innerHTML = 'Verify Code';
-                verifyBtn.disabled = false;
-            }
-            
-            isVerifying = false;
+        function copyText(text, iconId) {
+            navigator.clipboard.writeText(text).then(() => {
+                const icon = document.getElementById(iconId);
+                icon.textContent = '✅';
+                setTimeout(() => { icon.textContent = '📋'; }, 2000);
+            });
         }
 
-        function showSuccess(cardData, successText) {
-            // Hide form and show success
-            document.getElementById('activationForm').style.display = 'none';
-            document.getElementById('successResult').style.display = 'block';
-            document.getElementById('successText').textContent = successText;
-            
-            // Populate account card
-            const accountCard = document.getElementById('accountCard');
-            const isDirectAccess = cardData.isDirectAccess;
-            
-            if (isDirectAccess) {
-                accountCard.classList.add('direct-access');
-                document.getElementById('continueBtn').textContent = 'Continue Browsing';
-                document.getElementById('continueBtn').style.background = 'linear-gradient(135deg, #8b5cf6, #a855f7)';
-            } else {
-                accountCard.classList.remove('direct-access');
-                document.getElementById('continueBtn').textContent = 'Enjoy Your Free Account!';
-                document.getElementById('continueBtn').style.background = 'linear-gradient(135deg, #10b981, #059669)';
-            }
-            
-            accountCard.innerHTML = `
-                <div class="account-header">
-                    <div class="account-title">${cardData.title}</div>
-                    <div class="validity-badge">Valid until ${cardData.validUntil}</div>
-                </div>
-                
-                <div class="credential-item">
-                    <div class="credential-label">${isDirectAccess ? 'Username' : 'Email'}</div>
-                    <div class="credential-value">${cardData.email}</div>
-                </div>
-                
-                <div class="credential-item">
-                    <div class="credential-label">Password</div>
-                    <div class="credential-value">${cardData.password}</div>
-                </div>
-                
-                <div class="credential-item">
-                    <div class="credential-label">Login URL</div>
-                    <a href="${cardData.loginUrl}" target="_blank" style="color: white; text-decoration: underline;">
-                        ${cardData.loginUrl}
-                    </a>
-                </div>
-                
-                <div class="features-list">
-                    ${cardData.features.map(feature => `<span class="feature-tag">${feature}</span>`).join('')}
-                </div>
-                
-                <div class="instructions">
-                    <div class="instructions-title">Instructions:</div>
-                    <div class="instructions-text">${cardData.instructions}</div>
-                </div>
-                
-                <div class="powered-by">
-                    Powered by <a href="https://sharedchat.cn" target="_blank">SharedChat.cn</a>
-                </div>
-            `;
-            
-            // Add slide-up animation
-            accountCard.classList.add('slide-up');
-        }
+        function copyCanvaEmail() { copyText(document.getElementById('canvaEmail').textContent, 'canvaEmailIcon'); }
+        function copyAppleTVEmail() { copyText(document.getElementById('appletvEmail').textContent, 'appletvEmailIcon'); }
+        function copyAppleTVPassword() { copyText(document.getElementById('appletvPassword').textContent, 'appletvPasswordIcon'); }
+        function copyAppleMusicEmail() { copyText(document.getElementById('applemusicEmail').textContent, 'applemusicEmailIcon'); }
+        function copyAppleMusicPassword() { copyText(document.getElementById('applemusicPassword').textContent, 'applemusicPasswordIcon'); }
+        function copyPerplexityEmail() { copyText(document.getElementById('perplexityEmail').textContent, 'perplexityEmailIcon'); }
+        function copyEpicGamesEmail() { copyText(document.getElementById('epicgamesEmail').textContent, 'epicgamesEmailIcon'); }
+        function copyEpicGamesPassword() { copyText(document.getElementById('epicgamesPassword').textContent, 'epicgamesPasswordIcon'); }
+        function copyVeedEmail() { copyText(document.getElementById('veedEmail').textContent, 'veedEmailIcon'); }
 
-        // Close modal when clicking outside
-        document.getElementById('activationModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
-        });
-
-        // Add smooth scrolling for better UX
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add entrance animations
-            const cards = document.querySelectorAll('.product-card');
-            cards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.1}s`;
-                card.classList.add('slide-up');
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                }
             });
         });
     </script>
