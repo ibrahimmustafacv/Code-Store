@@ -88,6 +88,12 @@
             font-size: 0.875rem;
             font-weight: 500;
             color: #4f46e5;
+            transition: all 0.3s ease;
+        }
+
+        .badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .hero {
@@ -123,12 +129,24 @@
 
         .stat-item {
             text-align: center;
+            padding: 1rem;
+            border-radius: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         .stat-item .number {
             display: block;
             font-size: 2.25rem;
             font-weight: 800;
+            min-height: 3rem;
         }
 
         .stat-item .label {
@@ -156,6 +174,7 @@
             font-weight: 800;
             color: #111827;
             margin-bottom: 1rem;
+            animation: fadeInUp 0.6s ease-out;
         }
 
         .section-header p {
@@ -163,11 +182,12 @@
             color: #6b7280;
             max-width: 32rem;
             margin: 0 auto;
+            animation: fadeInUp 0.8s ease-out;
         }
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 2rem;
             margin-bottom: 3rem;
         }
@@ -175,24 +195,21 @@
         .product-card {
             background: white;
             border-radius: 1rem;
-            padding: 2rem;
+            overflow: hidden;
             text-align: center;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            transition: all 0.15s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             border: 2px solid transparent;
             position: relative;
-            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .product-card.coming-soon {
-            opacity: 0.6;
-            pointer-events: none;
-        }
-
-        .product-card:not(.coming-soon):hover {
-            transform: translateY(-0.5rem);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        .product-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
             border-color: #6366f1;
         }
 
@@ -204,26 +221,34 @@
             right: 0;
             height: 4px;
             background: linear-gradient(to right, #6366f1, #9333ea);
+            z-index: 1;
+        }
+
+        .product-image-container {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+            background: #f8fafc;
         }
 
         .product-image {
             width: 100%;
-            height: 12rem;
-            margin-bottom: 1.25rem;
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: white;
-            position: relative;
+            height: 100%;
+            object-fit: contain;
+            padding: 2rem;
+            transition: transform 0.5s ease;
         }
 
-        .product-image img {
-            max-width: 80%;
-            max-height: 80%;
-            object-fit: contain;
+        .product-card:hover .product-image {
+            transform: scale(1.1);
+        }
+
+        .product-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .product-card h4 {
@@ -231,23 +256,42 @@
             font-weight: 700;
             color: #111827;
             margin-bottom: 0.75rem;
+            transition: color 0.3s ease;
+        }
+
+        .product-card:hover h4 {
+            color: #6366f1;
         }
 
         .product-card p {
             color: #6b7280;
             margin-bottom: 1rem;
             line-height: 1.625;
+            flex-grow: 1;
         }
 
         .price {
-            font-size: 1.25rem;
-            font-weight: 700;
+            font-size: 1.5rem;
+            font-weight: 800;
             color: #4f46e5;
             margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
         }
 
-        .price.coming-soon-price {
-            color: #9ca3af;
+        .price::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, #6366f1, #9333ea);
+            transition: width 0.3s ease;
+        }
+
+        .product-card:hover .price::after {
+            width: 100%;
         }
 
         .btn {
@@ -257,8 +301,10 @@
             font-weight: 600;
             border: none;
             cursor: pointer;
-            transition: all 0.15s;
+            transition: all 0.3s ease;
             font-size: 1rem;
+            position: relative;
+            overflow: hidden;
         }
 
         .btn-primary {
@@ -267,14 +313,24 @@
         }
 
         .btn-primary:hover {
-            transform: translateY(-0.25rem);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
         }
 
-        .btn-disabled {
-            background: #e5e7eb;
-            color: #6b7280;
-            cursor: not-allowed;
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .btn-primary:hover::after {
+            transform: translateX(100%);
         }
 
         footer {
@@ -292,6 +348,71 @@
             margin-bottom: 0.5rem;
         }
 
+        .animated-text {
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .animated-text:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .animated-text:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .counting-number {
+            animation: countUp 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(99, 102, 241, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+            }
+        }
+
         .modal {
             display: none;
             position: fixed;
@@ -302,6 +423,16 @@
             justify-content: center;
             z-index: 50;
             padding: 1rem;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
         .modal.active {
@@ -315,6 +446,18 @@
             max-width: 28rem;
             width: 100%;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            animation: slideUp 0.4s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .modal-content-large {
@@ -345,11 +488,13 @@
             margin-bottom: 1rem;
             text-align: center;
             font-size: 1.125rem;
+            transition: all 0.3s ease;
         }
 
         .modal input:focus {
             outline: none;
             border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
         }
 
         .error-message {
@@ -357,6 +502,13 @@
             font-size: 0.875rem;
             margin-bottom: 1rem;
             text-align: center;
+            animation: shake 0.5s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
         }
 
         .modal-buttons {
@@ -373,11 +525,12 @@
             color: white;
             border: none;
             cursor: pointer;
-            transition: all 0.15s;
+            transition: all 0.3s ease;
         }
 
         .btn-confirm:hover {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
         }
 
         .btn-cancel {
@@ -389,11 +542,12 @@
             color: #374151;
             border: none;
             cursor: pointer;
-            transition: all 0.15s;
+            transition: all 0.3s ease;
         }
 
         .btn-cancel:hover {
             background: #d1d5db;
+            transform: translateY(-2px);
         }
 
         .service-header {
@@ -411,14 +565,24 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            font-size: 2rem;
             overflow: hidden;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         .service-icon img {
             width: 100%;
             height: 100%;
             object-fit: contain;
+            padding: 0.5rem;
         }
 
         .service-details {
@@ -430,6 +594,12 @@
             padding: 1.5rem;
             margin-bottom: 1.5rem;
             border: 2px solid;
+            transition: all 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         .detail-card-cyan { background: linear-gradient(to bottom right, #ecfeff, #dbeafe); border-color: #67e8f9; }
@@ -460,6 +630,11 @@
             align-items: center;
             justify-content: center;
             color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .detail-card:hover .detail-icon {
+            transform: rotate(15deg);
         }
 
         .detail-icon-cyan { background: #06b6d4; }
@@ -478,6 +653,11 @@
             font-size: 1.125rem;
             font-weight: 700;
             color: #111827;
+            transition: color 0.3s ease;
+        }
+
+        .detail-card:hover h4 {
+            color: #6366f1;
         }
 
         .detail-card p {
@@ -497,11 +677,29 @@
             border-radius: 0.75rem;
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.15s;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
         .detail-link:hover {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .detail-link::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .detail-link:hover::after {
+            left: 100%;
         }
 
         .detail-link-orange { background: linear-gradient(to right, #f97316, #dc2626); }
@@ -529,18 +727,20 @@
             padding: 1.5rem;
             text-align: center;
             cursor: pointer;
-            transition: all 0.15s;
+            transition: all 0.3s ease;
         }
 
         .account-option:hover {
             border-color: #1b2838;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         .account-option.selected {
             border-color: #1b2838;
             background: linear-gradient(to bottom right, #1b2838, #2a475e);
             color: white;
+            transform: scale(1.05);
         }
 
         .account-option h5 {
@@ -560,6 +760,7 @@
 
         .account-details-section.active {
             display: block;
+            animation: fadeIn 0.5s ease;
         }
 
         .credential-row, .email-box {
@@ -571,6 +772,12 @@
             padding: 1rem;
             border: 1px solid #e5e5e5;
             margin-bottom: 0.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .credential-row:hover, .email-box:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .credential-label {
@@ -594,11 +801,12 @@
             border: none;
             cursor: pointer;
             border-radius: 0.5rem;
-            transition: all 0.15s;
+            transition: all 0.3s ease;
         }
 
         .copy-btn:hover {
             background: #f3e8ff;
+            transform: rotate(15deg);
         }
 
         .instructions {
@@ -612,6 +820,14 @@
             color: #374151;
             font-size: 0.875rem;
             margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .instructions li:hover {
+            background: rgba(99, 102, 241, 0.1);
+            transform: translateX(5px);
         }
 
         .instructions li span:first-child {
@@ -626,6 +842,7 @@
             .badges { display: none; }
             .products-section { padding: 2rem 1rem; }
             .products-grid { grid-template-columns: 1fr; }
+            .product-image-container { height: 150px; }
         }
     </style>
 </head>
@@ -655,7 +872,7 @@
             <p>Get instant access to premium AI tools and services. Secure, verified, and ready to use.</p>
             <div class="stats">
                 <div class="stat-item">
-                    <span class="number">1000+</span>
+                    <span class="number" id="customerCount">0</span>
                     <span class="label">Happy Customers</span>
                 </div>
                 <div class="stat-item">
@@ -679,93 +896,111 @@
 
             <div class="products-grid">
                 <div class="product-card" onclick="openModal('chatgpt')">
-                    <div class="product-image">
-                        <img src="chatgpt-icon.png" alt="ChatGPT Pro">
+                    <div class="product-image-container">
+                        <img src="chatgpt-icon.png" alt="ChatGPT Pro" class="product-image">
                     </div>
-                    <h4>ChatGPT Pro</h4>
-                    <p>Premium AI assistant with advanced capabilities and unlimited access</p>
-                    <div class="price">$20/month</div>
-                    <button class="btn btn-primary">Activate Account</button>
+                    <div class="product-content">
+                        <h4>ChatGPT Pro</h4>
+                        <p>Premium AI assistant with advanced capabilities and unlimited access</p>
+                        <div class="price">$20/month</div>
+                        <button class="btn btn-primary">Activate Account</button>
+                    </div>
                 </div>
 
                 <div class="product-card" onclick="openModal('canva')">
-                    <div class="product-image">
-                        <img src="canva-icon.png" alt="Canva Pro">
+                    <div class="product-image-container">
+                        <img src="canva-icon.png" alt="Canva Pro" class="product-image">
                     </div>
-                    <h4>Canva Pro</h4>
-                    <p>Professional design tool with premium templates</p>
-                    <div class="price">$15/month</div>
-                    <button class="btn btn-primary">Activate Account</button>
+                    <div class="product-content">
+                        <h4>Canva Pro</h4>
+                        <p>Professional design tool with premium templates</p>
+                        <div class="price">$15/month</div>
+                        <button class="btn btn-primary">Activate Account</button>
+                    </div>
                 </div>
 
                 <div class="product-card" onclick="openModal('appletv')">
-                    <div class="product-image">
-                        <img src="appletv-icon.png" alt="Apple TV">
+                    <div class="product-image-container">
+                        <img src="appletv-icon.png" alt="Apple TV" class="product-image">
                     </div>
-                    <h4>Apple TV</h4>
-                    <p>Stream premium content on Apple TV+</p>
-                    <div class="price">$10/month</div>
-                    <button class="btn btn-primary">Activate Account</button>
+                    <div class="product-content">
+                        <h4>Apple TV</h4>
+                        <p>Stream premium content on Apple TV+</p>
+                        <div class="price">$10/month</div>
+                        <button class="btn btn-primary">Activate Account</button>
+                    </div>
                 </div>
 
                 <div class="product-card" onclick="openModal('applemusic')">
-                    <div class="product-image">
-                        <img src="applemusic-icon.png" alt="Apple Music">
+                    <div class="product-image-container">
+                        <img src="applemusic-icon.png" alt="Apple Music" class="product-image">
                     </div>
-                    <h4>Apple Music</h4>
-                    <p>Access millions of songs and playlists</p>
-                    <div class="price">$10/month</div>
-                    <button class="btn btn-primary">Activate Account</button>
+                    <div class="product-content">
+                        <h4>Apple Music</h4>
+                        <p>Access millions of songs and playlists</p>
+                        <div class="price">$10/month</div>
+                        <button class="btn btn-primary">Activate Account</button>
+                    </div>
                 </div>
 
                 <div class="product-card" onclick="openModal('coursera')">
-                    <div class="product-image">
-                        <img src="coursera-icon.png" alt="Coursera">
+                    <div class="product-image-container">
+                        <img src="coursera-icon.png" alt="Coursera" class="product-image">
                     </div>
-                    <h4>Coursera</h4>
-                    <p>Access to premium online courses and certificates</p>
-                    <div class="price">$15/month</div>
-                    <button class="btn btn-primary">Activate Account</button>
+                    <div class="product-content">
+                        <h4>Coursera</h4>
+                        <p>Access to premium online courses and certificates</p>
+                        <div class="price">$15/month</div>
+                        <button class="btn btn-primary">Activate Account</button>
+                    </div>
                 </div>
 
                 <div class="product-card" onclick="openModal('perplexity')">
-                    <div class="product-image">
-                        <img src="perplexity-icon.png" alt="Perplexity.ai">
+                    <div class="product-image-container">
+                        <img src="perplexity-icon.png" alt="Perplexity.ai" class="product-image">
                     </div>
-                    <h4>Perplexity.ai</h4>
-                    <p>AI-powered search and research assistant</p>
-                    <div class="price">$20/month</div>
-                    <button class="btn btn-primary">Activate Account</button>
+                    <div class="product-content">
+                        <h4>Perplexity.ai</h4>
+                        <p>AI-powered search and research assistant</p>
+                        <div class="price">$20/month</div>
+                        <button class="btn btn-primary">Activate Account</button>
+                    </div>
                 </div>
 
                 <div class="product-card" onclick="openModal('epicgames')">
-                    <div class="product-image">
-                        <img src="epicgames-icon.png" alt="Epic Games">
+                    <div class="product-image-container">
+                        <img src="epicgames-icon.png" alt="Epic Games" class="product-image">
                     </div>
-                    <h4>Epic Games</h4>
-                    <p>Premium gaming account with exclusive titles</p>
-                    <div class="price">$25/month</div>
-                    <button class="btn btn-primary">Activate Account</button>
+                    <div class="product-content">
+                        <h4>Epic Games</h4>
+                        <p>Premium gaming account with exclusive titles</p>
+                        <div class="price">$25/month</div>
+                        <button class="btn btn-primary">Activate Account</button>
+                    </div>
                 </div>
 
                 <div class="product-card" onclick="openModal('steam')">
-                    <div class="product-image">
-                        <img src="steam-icon.png" alt="Steam">
+                    <div class="product-image-container">
+                        <img src="steam-icon.png" alt="Steam" class="product-image">
                     </div>
-                    <h4>Steam</h4>
-                    <p>Gaming platform with extensive game library</p>
-                    <div class="price">$30/month</div>
-                    <button class="btn btn-primary">Activate Account</button>
+                    <div class="product-content">
+                        <h4>Steam</h4>
+                        <p>Gaming platform with extensive game library</p>
+                        <div class="price">$30/month</div>
+                        <button class="btn btn-primary">Activate Account</button>
+                    </div>
                 </div>
 
                 <div class="product-card" onclick="openModal('veed')">
-                    <div class="product-image">
-                        <img src="veed-icon.png" alt="Veed.io">
+                    <div class="product-image-container">
+                        <img src="veed-icon.png" alt="Veed.io" class="product-image">
                     </div>
-                    <h4>Veed.io</h4>
-                    <p>Professional video editing and creation tool</p>
-                    <div class="price">$18/month</div>
-                    <button class="btn btn-primary">Activate Account</button>
+                    <div class="product-content">
+                        <h4>Veed.io</h4>
+                        <p>Professional video editing and creation tool</p>
+                        <div class="price">$18/month</div>
+                        <button class="btn btn-primary">Activate Account</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1438,6 +1673,57 @@
 
     <script>
         let currentModalType = null;
+        
+        // دالة العد التصاعدي
+        function animateCount(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const current = Math.floor(progress * (end - start) + start);
+                element.textContent = current.toLocaleString() + '+';
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // تهيئة العناصر المتحركة
+        document.addEventListener('DOMContentLoaded', function() {
+            // عد تصاعدي لعدد العملاء
+            const customerCount = document.getElementById('customerCount');
+            animateCount(customerCount, 0, 1000, 2000);
+            
+            // تأثيرات عند التمرير
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, observerOptions);
+
+            // مراقبة العناصر للحركات
+            document.querySelectorAll('.product-card, .stat-item, .detail-card').forEach(el => {
+                observer.observe(el);
+            });
+
+            // تأثيرات عند المرور على الروابط
+            document.querySelectorAll('.detail-link, .btn-primary').forEach(link => {
+                link.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px)';
+                });
+                link.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
 
         function openModal(type) {
             currentModalType = type;
